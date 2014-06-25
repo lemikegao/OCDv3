@@ -10,7 +10,6 @@
 #import "Level9Scene.h"
 
 static CGFloat const kMaxLockDistance = 24;
-static CGFloat const kSolutionNonPinned = 6;
 static CGFloat const kNumObjects = 9;
 static NSString *const kBorderName = @"kBorderName";
 
@@ -190,42 +189,6 @@ static NSString *const kBorderName = @"kBorderName";
 - (BOOL)_isGameOver
 {
     return self.numObjectsLocked == kNumObjects;
-//    __block BOOL returnVal = YES;
-//    __block NSUInteger numNonPinned = 0;
-//    
-//    [self enumerateChildNodesWithName:@"square" usingBlock:^(SKNode *shapeNode, BOOL *stop) {
-//        if (shapeNode.physicsBody.pinned == NO)
-//        {
-//            numNonPinned++;
-//            
-//            if (numNonPinned > kSolutionNonPinned)
-//            {
-//                returnVal = NO;
-//                *stop = YES;
-//            }
-//            
-//            __block BOOL innerReturnVal = NO;
-//            [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *targetNode, BOOL *stop) {
-//                CGFloat xDistance = fabsf(shapeNode.position.x - targetNode.position.x);
-//                CGFloat yDistance = fabsf(shapeNode.position.y - targetNode.position.y);
-//                
-//                if (xDistance <= kMaxLockDistance && yDistance <= kMaxLockDistance)
-//                {
-//                    innerReturnVal = YES;
-//                    *stop = YES;
-//                }
-//            }];
-//            
-//            if (innerReturnVal == NO)
-//            {
-//                returnVal = NO;
-//                *stop = YES;
-//            }
-//        }
-//    }];
-//    
-//    
-//    return returnVal;
 }
 
 #pragma mark - Helper methods

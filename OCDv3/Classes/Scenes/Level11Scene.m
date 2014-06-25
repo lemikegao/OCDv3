@@ -10,7 +10,7 @@
 #import "Level1Scene.h"
 
 static CGFloat const kMaxLockDistance = 24;
-static CGFloat const kSolutionNonPinned = 3;
+static CGFloat const kNumObjects = 5;
 static NSString *const kBorderName = @"kBorderName";
 
 @implementation SKScene (Unarchive)
@@ -36,6 +36,7 @@ static NSString *const kBorderName = @"kBorderName";
 
 @property (nonatomic, weak) SKSpriteNode *selectedNode;
 @property (nonatomic) BOOL gameOver;
+@property (nonatomic) NSInteger numObjectsLocked;
 
 @end
 
@@ -43,6 +44,7 @@ static NSString *const kBorderName = @"kBorderName";
 
 -(void)didMoveToView:(SKView *)view
 {
+    _numObjectsLocked = 0;
     _gameOver = NO;
     
     // Hide all hidden targets
@@ -146,6 +148,8 @@ static NSString *const kBorderName = @"kBorderName";
             
             if (xDistance <= kMaxLockDistance && yDistance <= kMaxLockDistance)
             {
+                self.numObjectsLocked++;
+                
                 // Snap into place
                 object.position = node.position;
                 
@@ -163,47 +167,39 @@ static NSString *const kBorderName = @"kBorderName";
         }
     }];
     
+    [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
+        if ([object.color isEqual:[(SKSpriteNode *)node color]])
+        {
+            // Check if renderingNode is close enough to lock into place
+            CGFloat xDistance = fabsf(node.position.x - object.position.x);
+            CGFloat yDistance = fabsf(node.position.y - object.position.y);
+            
+            if (xDistance <= kMaxLockDistance && yDistance <= kMaxLockDistance)
+            {
+                self.numObjectsLocked++;
+                
+                // Snap into place
+                object.position = node.position;
+                
+                // Disable user interaction
+                object.userInteractionEnabled = NO;
+                object.physicsBody.pinned = YES;
+                
+                returnVal = YES;
+                *stop = YES;
+                
+                // Lock animation
+                SKAction *animation = [SKAction sequence:@[[SKAction scaleTo:1.2 duration:0.2], [SKAction scaleTo:1 duration:0.2]]];
+                [object runAction:animation];
+            }
+        }
+    }];
     return returnVal;
 }
 
 - (BOOL)_isGameOver
 {
-    __block BOOL returnVal = YES;
-    __block NSUInteger numNonPinned = 0;
-    
-    [self enumerateChildNodesWithName:@"square" usingBlock:^(SKNode *shapeNode, BOOL *stop) {
-        if (shapeNode.physicsBody.pinned == NO)
-        {
-            numNonPinned++;
-            
-            if (numNonPinned > kSolutionNonPinned)
-            {
-                returnVal = NO;
-                *stop = YES;
-            }
-            
-            __block BOOL innerReturnVal = NO;
-            [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *targetNode, BOOL *stop) {
-                CGFloat xDistance = fabsf(shapeNode.position.x - targetNode.position.x);
-                CGFloat yDistance = fabsf(shapeNode.position.y - targetNode.position.y);
-                
-                if ([[(SKSpriteNode *)shapeNode color] isEqual:[(SKSpriteNode *)targetNode color]] && xDistance <= kMaxLockDistance && yDistance <= kMaxLockDistance)
-                {
-                    innerReturnVal = YES;
-                    *stop = YES;
-                }
-            }];
-            
-            if (innerReturnVal == NO)
-            {
-                returnVal = NO;
-                *stop = YES;
-            }
-        }
-    }];
-    
-    
-    return returnVal;
+    return self.numObjectsLocked == kNumObjects;
 }
 
 #pragma mark - Helper methods

@@ -56,6 +56,14 @@
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
     
+    // Add version (build) label
+    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, skView.bounds.size.height - 18, 100, 18)];
+    versionLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
+    versionLabel.backgroundColor = [UIColor clearColor];
+    versionLabel.textColor = [UIColor blackColor];
+    versionLabel.text = [NSString stringWithFormat:@"v%@ (%@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
+    [skView addSubview:versionLabel];
+    
     // Create and configure the scene.
     [self _loadLevel:1];
 }
