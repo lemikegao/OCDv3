@@ -51,6 +51,9 @@ static NSString *const kBorderName = @"kBorderName";
     [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
         node.hidden = YES;
     }];
+    
+    CGRect frame = self.frame;
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(frame.origin.x - 150, frame.origin.y - 150, frame.size.width + 300, frame.size.height + 300)];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -209,7 +212,7 @@ static NSString *const kBorderName = @"kBorderName";
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.view presentScene:scene transition:[SKTransition fadeWithColor:[UIColor colorWithRed:13/255.0 green:13/255.0 blue:13/255.0 alpha:1] duration:2]];
+        [self.view presentScene:scene transition:[SKTransition fadeWithColor:[UIColor colorWithRed:13/255.0 green:13/255.0 blue:13/255.0 alpha:1] duration:1]];
     });
 }
 
