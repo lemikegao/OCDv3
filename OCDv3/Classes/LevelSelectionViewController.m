@@ -8,7 +8,7 @@
 
 #import "LevelSelectionViewController.h"
 
-static const NSUInteger kNumLevels = 13;
+static const NSUInteger kNumLevels = 16;
 
 @interface LevelSelectionViewController ()
 
