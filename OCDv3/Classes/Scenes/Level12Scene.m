@@ -1,16 +1,16 @@
 //
-//  Level11Scene.m
+//  Level12Scene.m
 //  OCDv3
 //
-//  Created by Michael Gao on 6/24/14.
+//  Created by Michael Gao on 6/25/14.
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import "Level11Scene.h"
 #import "Level12Scene.h"
+#import "Level13Scene.h"
 
 static CGFloat const kMaxLockDistance = 24;
-static CGFloat const kNumObjects = 5;
+static CGFloat const kNumObjects = 6;
 static NSString *const kBorderName = @"kBorderName";
 
 @implementation SKScene (Unarchive)
@@ -32,7 +32,7 @@ static NSString *const kBorderName = @"kBorderName";
 
 @end
 
-@interface Level11Scene()
+@interface Level12Scene()
 
 @property (nonatomic, weak) SKSpriteNode *selectedNode;
 @property (nonatomic) BOOL gameOver;
@@ -40,7 +40,7 @@ static NSString *const kBorderName = @"kBorderName";
 
 @end
 
-@implementation Level11Scene
+@implementation Level12Scene
 
 -(void)didMoveToView:(SKView *)view
 {
@@ -208,7 +208,7 @@ static NSString *const kBorderName = @"kBorderName";
 #pragma mark - Helper methods
 - (void)_segueToNextScene
 {
-    SKScene *scene = [Level12Scene unarchiveFromFile:@"Level12Scene"];
+    SKScene *scene = [Level13Scene unarchiveFromFile:@"Level13Scene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

@@ -19,6 +19,8 @@
 #import "Level9Scene.h"
 #import "Level10Scene.h"
 #import "Level11Scene.h"
+#import "Level12Scene.h"
+#import "Level13Scene.h"
 
 @implementation SKScene (Unarchive)
 
@@ -136,6 +138,14 @@
             
         case 11:
             scene = [Level11Scene unarchiveFromFile:@"Level11Scene"];
+            break;
+            
+        case 12:
+            scene = [Level12Scene unarchiveFromFile:@"Level12Scene"];
+            break;
+            
+        case 13:
+            scene = [Level13Scene unarchiveFromFile:@"Level13Scene"];
             break;
             
         default:
