@@ -51,6 +51,7 @@ static NSString *const kBorderName = @"kBorderName";
     
     // Hide all hidden targets
     [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
+        node.zPosition = -1;
         node.hidden = YES;
     }];
     
