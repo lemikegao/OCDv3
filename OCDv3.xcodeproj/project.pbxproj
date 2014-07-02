@@ -24,6 +24,8 @@
 		3E440ED71953FC920074D667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E440ED61953FC920074D667 /* main.m */; };
 		3E440EE51953FC920074D667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E440EE31953FC920074D667 /* Main.storyboard */; };
 		3E440EF31953FC920074D667 /* OCDv3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E440EF21953FC920074D667 /* OCDv3Tests.m */; };
+		3E54B8A9195FCB0200C2BD90 /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E54B8A8195FCB0200C2BD90 /* TutorialScene.sks */; };
+		3E54B8AC195FF09000C2BD90 /* TutorialScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E54B8AB195FF09000C2BD90 /* TutorialScene.m */; };
 		3E86753A195C06E000776D37 /* Level16Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E867539195C06E000776D37 /* Level16Scene.sks */; };
 		3E995E2A195C0917000AB193 /* Level16Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E995E29195C0917000AB193 /* Level16Scene.m */; };
 		3E9F5582195A9797006F85E7 /* Level11Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E9F5581195A9797006F85E7 /* Level11Scene.sks */; };
@@ -91,6 +93,9 @@
 		3E440EEC1953FC920074D667 /* OCDv3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCDv3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E440EF11953FC920074D667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E440EF21953FC920074D667 /* OCDv3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDv3Tests.m; sourceTree = "<group>"; };
+		3E54B8A8195FCB0200C2BD90 /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
+		3E54B8AA195FF09000C2BD90 /* TutorialScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialScene.h; sourceTree = "<group>"; };
+		3E54B8AB195FF09000C2BD90 /* TutorialScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialScene.m; sourceTree = "<group>"; };
 		3E867539195C06E000776D37 /* Level16Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level16Scene.sks; sourceTree = "<group>"; };
 		3E995E28195C0917000AB193 /* Level16Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level16Scene.h; sourceTree = "<group>"; };
 		3E995E29195C0917000AB193 /* Level16Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level16Scene.m; sourceTree = "<group>"; };
@@ -235,6 +240,8 @@
 			children = (
 				3EDADD4D195600BC008C8905 /* GameScene.h */,
 				3EDADD4E195600BC008C8905 /* GameScene.m */,
+				3E54B8AA195FF09000C2BD90 /* TutorialScene.h */,
+				3E54B8AB195FF09000C2BD90 /* TutorialScene.m */,
 				3EDADD57195601EA008C8905 /* Level1Scene.h */,
 				3EDADD58195601EA008C8905 /* Level1Scene.m */,
 				3E18D6C719567A9700B3C161 /* Level2Scene.h */,
@@ -275,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				3EDADD50195600BC008C8905 /* GameScene.sks */,
+				3E54B8A8195FCB0200C2BD90 /* TutorialScene.sks */,
 				3EDADD5A195601FA008C8905 /* Level1Scene.sks */,
 				3E18D6D019567DC400B3C161 /* Level2Scene.sks */,
 				3EE78B851956C8B900CD24E9 /* Level3Scene.sks */,
@@ -382,6 +390,7 @@
 				3E105265195958D000458DB3 /* Level10Scene.sks in Resources */,
 				3EDADD56195600BC008C8905 /* GameScene.sks in Resources */,
 				3E1052541959399A00458DB3 /* Level6Scene.sks in Resources */,
+				3E54B8A9195FCB0200C2BD90 /* TutorialScene.sks in Resources */,
 				3EDADD52195600BC008C8905 /* Images.xcassets in Resources */,
 				3EA294BA19580A5600F55A3D /* Level5Scene.sks in Resources */,
 				3E9F5582195A9797006F85E7 /* Level11Scene.sks in Resources */,
@@ -416,6 +425,7 @@
 			files = (
 				3ECD48EA195BFF660041E09B /* Level14Scene.m in Sources */,
 				3E1052521959399100458DB3 /* Level6Scene.m in Sources */,
+				3E54B8AC195FF09000C2BD90 /* TutorialScene.m in Sources */,
 				3E9F5585195A9A6B006F85E7 /* Level11Scene.m in Sources */,
 				3E10525719593B4F00458DB3 /* Level7Scene.m in Sources */,
 				3EDADD59195601EA008C8905 /* Level1Scene.m in Sources */,

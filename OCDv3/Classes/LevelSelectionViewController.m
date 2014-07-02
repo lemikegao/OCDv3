@@ -8,7 +8,7 @@
 
 #import "LevelSelectionViewController.h"
 
-static const NSUInteger kNumLevels = 16;
+static const NSUInteger kNumLevels = 17;
 
 @interface LevelSelectionViewController ()
 
@@ -47,7 +47,7 @@ static const NSUInteger kNumLevels = 16;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Level %li", (long)indexPath.row+1];
+    cell.textLabel.text = (indexPath.row == 0) ? @"Tutorial" : [NSString stringWithFormat:@"Level %li", (long)indexPath.row];
     
     return cell;
 }
@@ -60,7 +60,7 @@ static const NSUInteger kNumLevels = 16;
 #pragma mark - UITableViewDelegate methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate didSelectLevel:indexPath.row+1];
+    [self.delegate didSelectLevel:indexPath.row];
     
     [self _dismiss];
 }

@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "LevelSelectionViewController.h"
+#import "TutorialScene.h"
 #import "Level1Scene.h"
 #import "Level2Scene.h"
 #import "Level3Scene.h"
@@ -70,7 +71,7 @@
     [skView addSubview:versionLabel];
     
     // Create and configure the scene.
-    [self _loadLevel:1];
+    [self _loadLevel:0];
 }
 
 - (BOOL)shouldAutorotate
@@ -99,6 +100,10 @@
     SKScene *scene;
     
     switch (level) {
+        case 0:
+            scene = [TutorialScene unarchiveFromFile:@"TutorialScene"];
+            break;
+            
         case 1:
             scene = [Level1Scene unarchiveFromFile:@"Level1Scene"];
             break;

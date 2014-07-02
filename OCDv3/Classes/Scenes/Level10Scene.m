@@ -37,6 +37,7 @@ static NSString *const kBorderName = @"kBorderName";
 @property (nonatomic, weak) SKSpriteNode *selectedNode;
 @property (nonatomic) BOOL gameOver;
 @property (nonatomic) NSInteger numObjectsLocked;
+@property (nonatomic, strong) UITouch *currentTouch;
 
 @end
 
@@ -44,6 +45,7 @@ static NSString *const kBorderName = @"kBorderName";
 
 -(void)didMoveToView:(SKView *)view
 {
+    _currentTouch = nil;
     _numObjectsLocked = 0;
     _gameOver = NO;
     
@@ -58,9 +60,10 @@ static NSString *const kBorderName = @"kBorderName";
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if (_gameOver == NO)
+    if (self.selectedNode == nil && _gameOver == NO)
     {
         UITouch *touch = [touches anyObject];
+        self.currentTouch = touch;
         CGPoint positionInScene = [touch locationInNode:self];
         [self _selectNodeForTouch:positionInScene];
     }
@@ -68,23 +71,37 @@ static NSString *const kBorderName = @"kBorderName";
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    UITouch *touch = [touches anyObject];
-    CGPoint positionInScene = [touch locationInNode:self];
-    CGPoint previousPosition = [touch previousLocationInNode:self];
-    
-    CGPoint translation = CGPointMake(positionInScene.x - previousPosition.x, positionInScene.y - previousPosition.y);
-    
-    [self _panForTranslation:translation];
+    [touches enumerateObjectsUsingBlock:^(UITouch *touch, BOOL *stop) {
+        if ([touch isEqual:self.currentTouch])
+        {
+            CGPoint positionInScene = [touch locationInNode:self];
+            CGPoint previousPosition = [touch previousLocationInNode:self];
+            
+            CGPoint translation = CGPointMake(positionInScene.x - previousPosition.x, positionInScene.y - previousPosition.y);
+            
+            [self _panForTranslation:translation];
+        }
+    }];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self _deselectNodeForTouch];
+    [touches enumerateObjectsUsingBlock:^(UITouch *touch, BOOL *stop) {
+        if ([touch isEqual:self.currentTouch])
+        {
+            [self _deselectNodeForTouch];
+        }
+    }];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self _deselectNodeForTouch];
+    [touches enumerateObjectsUsingBlock:^(UITouch *touch, BOOL *stop) {
+        if ([touch isEqual:self.currentTouch])
+        {
+            [self _deselectNodeForTouch];
+        }
+    }];
 }
 
 - (void)_selectNodeForTouch:(CGPoint)touchLocation
@@ -102,6 +119,8 @@ static NSString *const kBorderName = @"kBorderName";
         // Add border
         NSUInteger borderWidth = 36;
         SKSpriteNode *border = [SKSpriteNode spriteNodeWithColor:[touchedNode.color colorWithAlphaComponent:0.5] size:CGSizeMake(touchedNode.size.width + borderWidth, touchedNode.size.height + borderWidth)];
+        border.userInteractionEnabled = NO;
+        border.physicsBody.pinned = YES;
         border.name = kBorderName;
         border.position = CGPointZero;
         border.zPosition = -10;
@@ -120,15 +139,18 @@ static NSString *const kBorderName = @"kBorderName";
 
 - (void)_deselectNodeForTouch
 {
+    self.currentTouch = nil;
+    
     if (self.selectedNode == nil)
     {
         return;
     }
     
-    // Remove border
-    [self.selectedNode removeAllChildren];
-    
-    [self _checkForObjectLock:self.selectedNode];
+    if ([self _checkForObjectLock:self.selectedNode] == NO)
+    {
+        // Remove border
+        [self.selectedNode removeAllChildren];
+    }
     
     self.selectedNode = nil;
     
@@ -151,21 +173,10 @@ static NSString *const kBorderName = @"kBorderName";
             
             if (xDistance <= kMaxLockDistance && yDistance <= kMaxLockDistance)
             {
-                self.numObjectsLocked++;
-                
-                // Snap into place
-                object.position = node.position;
-                
-                // Disable user interaction
-                object.userInteractionEnabled = NO;
-                object.physicsBody.pinned = YES;
+                [self _lockObject:object withTarget:node];
                 
                 returnVal = YES;
                 *stop = YES;
-                
-                // Lock animation
-                SKAction *animation = [SKAction sequence:@[[SKAction scaleTo:1.2 duration:0.2], [SKAction scaleTo:1 duration:0.2]]];
-                [object runAction:animation];
             }
         }
     }];
@@ -179,25 +190,35 @@ static NSString *const kBorderName = @"kBorderName";
             
             if (xDistance <= kMaxLockDistance && yDistance <= kMaxLockDistance)
             {
-                self.numObjectsLocked++;
-                
-                // Snap into place
-                object.position = node.position;
-                
-                // Disable user interaction
-                object.userInteractionEnabled = NO;
-                object.physicsBody.pinned = YES;
+                [self _lockObject:object withTarget:node];
                 
                 returnVal = YES;
                 *stop = YES;
-                
-                // Lock animation
-                SKAction *animation = [SKAction sequence:@[[SKAction scaleTo:1.2 duration:0.2], [SKAction scaleTo:1 duration:0.2]]];
-                [object runAction:animation];
             }
         }
     }];
     return returnVal;
+}
+
+- (void)_lockObject:(SKSpriteNode *)object withTarget:(SKNode *)target
+{
+    self.numObjectsLocked++;
+    
+    // Snap into place
+    object.position = target.position;
+    
+    // Disable user interaction
+    object.userInteractionEnabled = NO;
+    object.physicsBody.pinned = YES;
+    
+    // Shrink border animation
+    SKSpriteNode *border = (SKSpriteNode *)[object childNodeWithName:kBorderName];
+    SKAction *shrinkBorderAction = [SKAction scaleTo:0.95 duration:0.4];
+    [border runAction:shrinkBorderAction];
+    
+    // Lock animation
+    SKAction *animation = [SKAction sequence:@[[SKAction scaleTo:1.2 duration:0.2], [SKAction scaleTo:1 duration:0.2]]];
+    [object runAction:animation];
 }
 
 - (BOOL)_isGameOver
