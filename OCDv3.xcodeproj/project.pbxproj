@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0B9622196952B0007688EB /* RotationLevel2Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B9621196952B0007688EB /* RotationLevel2Scene.m */; };
+		3E0B9624196952BA007688EB /* RotationLevel2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E0B9623196952BA007688EB /* RotationLevel2Scene.sks */; };
+		3E0B96261969543B007688EB /* RotationLevel3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E0B96251969543B007688EB /* RotationLevel3Scene.sks */; };
+		3E0B9629196955D8007688EB /* RotationLevel3Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B9628196955D8007688EB /* RotationLevel3Scene.m */; };
 		3E3E095619569F99006D87BE /* LevelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E095419569F99006D87BE /* LevelSelectionViewController.m */; };
 		3E3E095719569F99006D87BE /* LevelSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E095519569F99006D87BE /* LevelSelectionViewController.xib */; };
 		3E440ED71953FC920074D667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E440ED61953FC920074D667 /* main.m */; };
@@ -67,6 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0B9620196952B0007688EB /* RotationLevel2Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationLevel2Scene.h; sourceTree = "<group>"; };
+		3E0B9621196952B0007688EB /* RotationLevel2Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationLevel2Scene.m; sourceTree = "<group>"; };
+		3E0B9623196952BA007688EB /* RotationLevel2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RotationLevel2Scene.sks; sourceTree = "<group>"; };
+		3E0B96251969543B007688EB /* RotationLevel3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RotationLevel3Scene.sks; sourceTree = "<group>"; };
+		3E0B9627196955D8007688EB /* RotationLevel3Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationLevel3Scene.h; sourceTree = "<group>"; };
+		3E0B9628196955D8007688EB /* RotationLevel3Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationLevel3Scene.m; sourceTree = "<group>"; };
 		3E3E095319569F99006D87BE /* LevelSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectionViewController.h; sourceTree = "<group>"; };
 		3E3E095419569F99006D87BE /* LevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectionViewController.m; sourceTree = "<group>"; };
 		3E3E095519569F99006D87BE /* LevelSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelSelectionViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +231,10 @@
 			children = (
 				3E6620F81968B1BB0020BA4E /* RotationLevel1Scene.h */,
 				3E6620F91968B1BB0020BA4E /* RotationLevel1Scene.m */,
+				3E0B9620196952B0007688EB /* RotationLevel2Scene.h */,
+				3E0B9621196952B0007688EB /* RotationLevel2Scene.m */,
+				3E0B9627196955D8007688EB /* RotationLevel3Scene.h */,
+				3E0B9628196955D8007688EB /* RotationLevel3Scene.m */,
 			);
 			path = Rotation;
 			sourceTree = "<group>";
@@ -268,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				3E6620F61968B1120020BA4E /* RotationLevel1Scene.sks */,
+				3E0B9623196952BA007688EB /* RotationLevel2Scene.sks */,
+				3E0B96251969543B007688EB /* RotationLevel3Scene.sks */,
 			);
 			path = Rotation;
 			sourceTree = "<group>";
@@ -424,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E0B96261969543B007688EB /* RotationLevel3Scene.sks in Resources */,
 				3EDADD56195600BC008C8905 /* GameScene.sks in Resources */,
 				3E6620F51968AFA60020BA4E /* Level9Scene.sks in Resources */,
 				3E6620E91968AFA60020BA4E /* Level13Scene.sks in Resources */,
@@ -438,6 +455,7 @@
 				3E6620F21968AFA60020BA4E /* Level6Scene.sks in Resources */,
 				3EDADD51195600BC008C8905 /* Assets.atlas in Resources */,
 				3E440EE51953FC920074D667 /* Main.storyboard in Resources */,
+				3E0B9624196952BA007688EB /* RotationLevel2Scene.sks in Resources */,
 				3E6620F31968AFA60020BA4E /* Level7Scene.sks in Resources */,
 				3E6620E81968AFA60020BA4E /* Level12Scene.sks in Resources */,
 				3E6620E61968AFA60020BA4E /* Level10Scene.sks in Resources */,
@@ -464,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E0B9622196952B0007688EB /* RotationLevel2Scene.m in Sources */,
 				3E6620C41968AF890020BA4E /* Level10Scene.m in Sources */,
 				3E6620CD1968AF890020BA4E /* Level3Scene.m in Sources */,
 				3E6620CE1968AF890020BA4E /* Level4Scene.m in Sources */,
@@ -479,6 +498,7 @@
 				3EDADD53195600BC008C8905 /* AppDelegate.m in Sources */,
 				3EDADD54195600BC008C8905 /* GameViewController.m in Sources */,
 				3E6620C71968AF890020BA4E /* Level13Scene.m in Sources */,
+				3E0B9629196955D8007688EB /* RotationLevel3Scene.m in Sources */,
 				3E6620CC1968AF890020BA4E /* Level2Scene.m in Sources */,
 				3E6620CA1968AF890020BA4E /* Level16Scene.m in Sources */,
 				3E6620D21968AF890020BA4E /* Level8Scene.m in Sources */,

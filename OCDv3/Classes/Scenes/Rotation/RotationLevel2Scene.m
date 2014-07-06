@@ -1,20 +1,20 @@
 //
-//  RotationLevel1.m
+//  RotationLevel2Scene.m
 //  OCDv3
 //
-//  Created by Michael Gao on 7/5/14.
+//  Created by Michael Gao on 7/6/14.
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import "RotationLevel1Scene.h"
 #import "RotationLevel2Scene.h"
+#import "RotationLevel3Scene.h"
 
 #define DegreesToRadians(d) (M_PI * (d) / 180.0f)
 #define RadiansToDegrees(r) ((r) * 180.0f / M_PI)
 
 static CGFloat const kRotationInterval = 15;
 static CGFloat const kMaxLockDistance = 24;
-static CGFloat const kNumObjects = 1;
+static CGFloat const kNumObjects = 2;
 static NSString *const kBorderName = @"kBorderName";
 
 @implementation SKScene (Unarchive)
@@ -52,7 +52,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
     return (line2Slope > line1Slope) ? degs : -degs;
 }
 
-@interface RotationLevel1Scene()
+@interface RotationLevel2Scene()
 
 @property (nonatomic, weak) SKSpriteNode *selectedNode;
 @property (nonatomic) BOOL gameOver;
@@ -62,7 +62,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
 
 @end
 
-@implementation RotationLevel1Scene
+@implementation RotationLevel2Scene
 
 -(void)didMoveToView:(SKView *)view
 {
@@ -301,7 +301,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
 #pragma mark - Helper methods
 - (void)_segueToNextScene
 {
-    SKScene *scene = [RotationLevel2Scene unarchiveFromFile:@"RotationLevel2Scene"];
+    SKScene *scene = [RotationLevel3Scene unarchiveFromFile:@"RotationLevel3Scene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

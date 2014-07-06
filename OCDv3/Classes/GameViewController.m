@@ -31,6 +31,8 @@
 
 // Rotation
 #import "RotationLevel1Scene.h"
+#import "RotationLevel2Scene.h"
+#import "RotationLevel3Scene.h"
 
 @implementation SKScene (Unarchive)
 
@@ -187,6 +189,14 @@
         switch (level) {
             case 1:
                 scene = [RotationLevel1Scene unarchiveFromFile:@"RotationLevel1Scene"];
+                break;
+                
+            case 2:
+                scene = [RotationLevel2Scene unarchiveFromFile:@"RotationLevel2Scene"];
+                break;
+                
+            case 3:
+                scene = [RotationLevel3Scene unarchiveFromFile:@"RotationLevel3Scene"];
                 break;
                 
             default:
