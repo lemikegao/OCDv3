@@ -8,7 +8,10 @@
 
 #import "GameViewController.h"
 #import "LevelSelectionViewController.h"
+// Tutorial
 #import "TutorialScene.h"
+
+// Squares
 #import "Level1Scene.h"
 #import "Level2Scene.h"
 #import "Level3Scene.h"
@@ -25,6 +28,9 @@
 #import "Level14Scene.h"
 #import "Level15Scene.h"
 #import "Level16Scene.h"
+
+// Rotation
+#import "RotationLevel1Scene.h"
 
 @implementation SKScene (Unarchive)
 
@@ -71,7 +77,8 @@
     [skView addSubview:versionLabel];
     
     // Create and configure the scene.
-    [self _loadLevel:0];
+    NSIndexPath *levelIndexPath = [NSIndexPath indexPathForRow:0 inSection:LevelSectionTypeRotation];
+    [self _loadLevelAtIndexPath:levelIndexPath];
 }
 
 - (BOOL)shouldAutorotate
@@ -94,86 +101,100 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)_loadLevel:(NSUInteger)level
+- (void)_loadLevelAtIndexPath:(NSIndexPath*)levelIndexPath
 {
     SKView * skView = (SKView *)self.view;
-    SKScene *scene;
+    SKScene *scene = nil;
+    NSUInteger level = levelIndexPath.row+1;
     
-    switch (level) {
-        case 0:
-            scene = [TutorialScene unarchiveFromFile:@"TutorialScene"];
-            break;
-            
-        case 1:
-            scene = [Level1Scene unarchiveFromFile:@"Level1Scene"];
-            break;
-            
-        case 2:
-            scene = [Level2Scene unarchiveFromFile:@"Level2Scene"];
-            break;
-            
-        case 3:
-            scene = [Level3Scene unarchiveFromFile:@"Level3Scene"];
-            break;
-            
-        case 4:
-            scene = [Level4Scene unarchiveFromFile:@"Level4Scene"];
-            break;
-            
-        case 5:
-            scene = [Level5Scene unarchiveFromFile:@"Level5Scene"];
-            break;
-            
-        case 6:
-            scene = [Level6Scene unarchiveFromFile:@"Level6Scene"];
-            break;
-            
-        case 7:
-            scene = [Level7Scene unarchiveFromFile:@"Level7Scene"];
-            break;
-            
-        case 8:
-            scene = [Level8Scene unarchiveFromFile:@"Level8Scene"];
-            break;
-            
-        case 9:
-            scene = [Level9Scene unarchiveFromFile:@"Level9Scene"];
-            break;
-            
-        case 10:
-            scene = [Level10Scene unarchiveFromFile:@"Level10Scene"];
-            break;
-            
-        case 11:
-            scene = [Level11Scene unarchiveFromFile:@"Level11Scene"];
-            break;
-            
-        case 12:
-            scene = [Level12Scene unarchiveFromFile:@"Level12Scene"];
-            break;
-            
-        case 13:
-            scene = [Level13Scene unarchiveFromFile:@"Level13Scene"];
-            break;
-            
-        case 14:
-            scene = [Level14Scene unarchiveFromFile:@"Level14Scene"];
-            break;
-            
-        case 15:
-            scene = [Level15Scene unarchiveFromFile:@"Level15Scene"];
-            break;
-            
-        case 16:
-            scene = [Level16Scene unarchiveFromFile:@"Level16Scene"];
-            break;
-            
-        default:
-            break;
+    if (levelIndexPath.section == LevelSectionTypeTutorial)
+    {
+        scene = [TutorialScene unarchiveFromFile:@"TutorialScene"];
+    }
+    else if (levelIndexPath.section == LevelSectionTypeSquares)
+    {
+        switch (level) {
+            case 1:
+                scene = [Level1Scene unarchiveFromFile:@"Level1Scene"];
+                break;
+                
+            case 2:
+                scene = [Level2Scene unarchiveFromFile:@"Level2Scene"];
+                break;
+                
+            case 3:
+                scene = [Level3Scene unarchiveFromFile:@"Level3Scene"];
+                break;
+                
+            case 4:
+                scene = [Level4Scene unarchiveFromFile:@"Level4Scene"];
+                break;
+                
+            case 5:
+                scene = [Level5Scene unarchiveFromFile:@"Level5Scene"];
+                break;
+                
+            case 6:
+                scene = [Level6Scene unarchiveFromFile:@"Level6Scene"];
+                break;
+                
+            case 7:
+                scene = [Level7Scene unarchiveFromFile:@"Level7Scene"];
+                break;
+                
+            case 8:
+                scene = [Level8Scene unarchiveFromFile:@"Level8Scene"];
+                break;
+                
+            case 9:
+                scene = [Level9Scene unarchiveFromFile:@"Level9Scene"];
+                break;
+                
+            case 10:
+                scene = [Level10Scene unarchiveFromFile:@"Level10Scene"];
+                break;
+                
+            case 11:
+                scene = [Level11Scene unarchiveFromFile:@"Level11Scene"];
+                break;
+                
+            case 12:
+                scene = [Level12Scene unarchiveFromFile:@"Level12Scene"];
+                break;
+                
+            case 13:
+                scene = [Level13Scene unarchiveFromFile:@"Level13Scene"];
+                break;
+                
+            case 14:
+                scene = [Level14Scene unarchiveFromFile:@"Level14Scene"];
+                break;
+                
+            case 15:
+                scene = [Level15Scene unarchiveFromFile:@"Level15Scene"];
+                break;
+                
+            case 16:
+                scene = [Level16Scene unarchiveFromFile:@"Level16Scene"];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    else if (levelIndexPath.section == LevelSectionTypeRotation)
+    {
+        switch (level) {
+            case 1:
+                scene = [RotationLevel1Scene unarchiveFromFile:@"RotationLevel1Scene"];
+                break;
+                
+            default:
+                break;
+        }
     }
     
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    
     [skView presentScene:scene];
 }
 
@@ -204,9 +225,9 @@
 }
 
 #pragma mark - LevelSectionViewControllerDelegate methods
-- (void)didSelectLevel:(NSUInteger)level
+- (void)didSelectLevelAtIndexPath:(NSIndexPath *)levelIndexPath;
 {
-    [self _loadLevel:level];
+    [self _loadLevelAtIndexPath:levelIndexPath];
 }
 
 @end

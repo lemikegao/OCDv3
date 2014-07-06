@@ -8,7 +8,8 @@
 
 #import "LevelSelectionViewController.h"
 
-static const NSUInteger kNumLevels = 17;
+static const NSUInteger kNumSquareLevels = 16;
+static const NSUInteger kNumRotationLevels = 1;
 
 @interface LevelSelectionViewController ()
 
@@ -32,9 +33,43 @@ static const NSUInteger kNumLevels = 17;
 }
 
 #pragma mark - UITableViewDataSource methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return LevelSectionTypeNumSections;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return kNumLevels;
+    switch (section) {
+        case LevelSectionTypeTutorial:
+            return 1;
+            
+        case LevelSectionTypeSquares:
+            return kNumSquareLevels;
+            
+        case LevelSectionTypeRotation:
+            return kNumRotationLevels;
+            
+        default:
+            return 0;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case LevelSectionTypeTutorial:
+            return @"Tutorial";
+            
+        case LevelSectionTypeSquares:
+            return @"Squares";
+            
+        case LevelSectionTypeRotation:
+            return @"Rotation";
+            
+        default:
+            return nil;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -47,7 +82,22 @@ static const NSUInteger kNumLevels = 17;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = (indexPath.row == 0) ? @"Tutorial" : [NSString stringWithFormat:@"Level %li", (long)indexPath.row];
+    NSString *text;
+    switch (indexPath.section) {
+        case LevelSectionTypeTutorial:
+            text = @"Tutorial";
+            break;
+            
+        case LevelSectionTypeSquares:
+        case LevelSectionTypeRotation:
+            text = [NSString stringWithFormat:@"Level %li", (long)indexPath.row+1];
+            break;
+            
+        default:
+            text = nil;
+            break;
+    }
+    cell.textLabel.text = text;
     
     return cell;
 }
@@ -60,7 +110,7 @@ static const NSUInteger kNumLevels = 17;
 #pragma mark - UITableViewDelegate methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate didSelectLevel:indexPath.row];
+    [self.delegate didSelectLevelAtIndexPath:indexPath];
     
     [self _dismiss];
 }

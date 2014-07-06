@@ -7,7 +7,7 @@
 //
 
 #import "Level16Scene.h"
-#import "TutorialScene.h"
+#import "RotationLevel1Scene.h"
 
 static CGFloat const kMaxLockDistance = 24;
 static CGFloat const kNumObjects = 13;
@@ -231,7 +231,7 @@ static NSString *const kBorderName = @"kBorderName";
 #pragma mark - Helper methods
 - (void)_segueToNextScene
 {
-    SKScene *scene = [TutorialScene unarchiveFromFile:@"TutorialScene"];
+    SKScene *scene = [RotationLevel1Scene unarchiveFromFile:@"RotationLevel1Scene"];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

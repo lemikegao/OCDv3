@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, LevelSectionType)
+{
+    LevelSectionTypeTutorial = 0,
+    LevelSectionTypeSquares,
+    LevelSectionTypeRotation,
+    LevelSectionTypeNumSections
+};
+
 @protocol LevelSelectionViewControllerDelegate <NSObject>
 
-- (void)didSelectLevel:(NSUInteger)level;
+- (void)didSelectLevelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
