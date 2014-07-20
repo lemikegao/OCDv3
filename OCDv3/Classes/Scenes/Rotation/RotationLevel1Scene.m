@@ -242,8 +242,8 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
     
     [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
         BOOL isCorrectAngle = NO;
-        CGFloat targetAngle = node.zRotation;
-        while (targetAngle < 2*M_PI)
+        CGFloat targetAngle = RadiansToDegrees(node.zRotation);
+        while (targetAngle < 360)
         {
             if (targetAngle == objectAngle)
             {
@@ -251,7 +251,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
                 break;
             }
             
-            targetAngle += M_PI_2;
+            targetAngle += 90;
         }
         if ([object.color isEqual:[(SKSpriteNode *)node color]] && isCorrectAngle)
         {

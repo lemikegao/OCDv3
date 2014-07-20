@@ -9,6 +9,7 @@
 #import "LevelSelectionViewController.h"
 
 static const NSUInteger kNumSquareLevels = 16;
+static const NSUInteger kNumTriangleLevels = 1;
 static const NSUInteger kNumRotationLevels = 3;
 
 @interface LevelSelectionViewController ()
@@ -47,6 +48,9 @@ static const NSUInteger kNumRotationLevels = 3;
         case LevelSectionTypeSquares:
             return kNumSquareLevels;
             
+        case LevelSectionTypeTriangles:
+            return kNumTriangleLevels;
+            
         case LevelSectionTypeRotation:
             return kNumRotationLevels;
             
@@ -63,6 +67,9 @@ static const NSUInteger kNumRotationLevels = 3;
             
         case LevelSectionTypeSquares:
             return @"Squares";
+            
+        case LevelSectionTypeTriangles:
+            return @"Triangles";
             
         case LevelSectionTypeRotation:
             return @"Rotation";
@@ -89,6 +96,7 @@ static const NSUInteger kNumRotationLevels = 3;
             break;
             
         case LevelSectionTypeSquares:
+        case LevelSectionTypeTriangles:
         case LevelSectionTypeRotation:
             text = [NSString stringWithFormat:@"Level %li", (long)indexPath.row+1];
             break;

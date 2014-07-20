@@ -12,6 +12,7 @@ typedef NS_ENUM(NSUInteger, LevelSectionType)
 {
     LevelSectionTypeTutorial = 0,
     LevelSectionTypeSquares,
+    LevelSectionTypeTriangles,
     LevelSectionTypeRotation,
     LevelSectionTypeNumSections
 };

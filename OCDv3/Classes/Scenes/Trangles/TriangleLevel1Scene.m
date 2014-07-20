@@ -1,20 +1,19 @@
 //
-//  RotationLevel2Scene.m
+//  TriangleLevel1Scene.m
 //  OCDv3
 //
-//  Created by Michael Gao on 7/6/14.
+//  Created by Michael Gao on 7/20/14.
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import "RotationLevel2Scene.h"
-#import "RotationLevel3Scene.h"
+#import "TriangleLevel1Scene.h"
 
 #define DegreesToRadians(d) (M_PI * (d) / 180.0f)
 #define RadiansToDegrees(r) ((r) * 180.0f / M_PI)
 
 static CGFloat const kRotationInterval = 15;
 static CGFloat const kMaxLockDistance = 24;
-static CGFloat const kNumObjects = 2;
+static CGFloat const kNumObjects = 1;
 static NSString *const kBorderName = @"kBorderName";
 
 @implementation SKScene (Unarchive)
@@ -52,7 +51,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
     return (line2Slope > line1Slope) ? degs : -degs;
 }
 
-@interface RotationLevel2Scene()
+@interface TriangleLevel1Scene()
 
 @property (nonatomic, weak) SKSpriteNode *selectedNode;
 @property (nonatomic) BOOL gameOver;
@@ -62,7 +61,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
 
 @end
 
-@implementation RotationLevel2Scene
+@implementation TriangleLevel1Scene
 
 -(void)didMoveToView:(SKView *)view
 {
@@ -72,7 +71,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
     _tappedNodeRotationRemainder = 0;
     
     // Hide all hidden targets
-    [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
+    [self enumerateChildNodesWithName:@"triangle-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
         node.zPosition = -1;
         node.hidden = YES;
     }];
@@ -162,8 +161,10 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
         self.tappedNodeRotationRemainder = 0;
         
         // Add border
-        NSUInteger borderWidth = 36;
-        SKSpriteNode *border = [SKSpriteNode spriteNodeWithColor:[touchedNode.color colorWithAlphaComponent:0.5] size:CGSizeMake(touchedNode.size.width + borderWidth, touchedNode.size.height + borderWidth)];
+//        NSUInteger borderWidth = 36;
+//        SKSpriteNode *border = [SKSpriteNode spriteNodeWithColor:[touchedNode.color colorWithAlphaComponent:0.5] size:CGSizeMake(touchedNode.size.width + borderWidth, touchedNode.size.height + borderWidth)];
+        SKSpriteNode *border = [SKSpriteNode spriteNodeWithImageNamed:@"triangle"];
+        [border setScale:1.1];
         border.userInteractionEnabled = NO;
         border.physicsBody.pinned = YES;
         border.name = kBorderName;
@@ -211,7 +212,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
     NSInteger objectAngle = object.zRotation < 0 ? roundf(RadiansToDegrees(object.zRotation + 2*M_PI)) : roundf(RadiansToDegrees(object.zRotation));
     
     __block BOOL returnVal = NO;
-    [self enumerateChildNodesWithName:@"square-target" usingBlock:^(SKNode *node, BOOL *stop) {
+    [self enumerateChildNodesWithName:@"triangle-target" usingBlock:^(SKNode *node, BOOL *stop) {
         BOOL isCorrectAngle = NO;
         CGFloat targetAngle = RadiansToDegrees(node.zRotation);
         while (targetAngle < 360)
@@ -240,7 +241,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
         }
     }];
     
-    [self enumerateChildNodesWithName:@"square-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
+    [self enumerateChildNodesWithName:@"triangle-target-hidden" usingBlock:^(SKNode *node, BOOL *stop) {
         BOOL isCorrectAngle = NO;
         CGFloat targetAngle = RadiansToDegrees(node.zRotation);
         while (targetAngle < 360)
@@ -301,12 +302,12 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
 #pragma mark - Helper methods
 - (void)_segueToNextScene
 {
-    SKScene *scene = [RotationLevel3Scene unarchiveFromFile:@"RotationLevel3Scene"];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.view presentScene:scene transition:[SKTransition fadeWithColor:[UIColor colorWithRed:13/255.0 green:13/255.0 blue:13/255.0 alpha:1] duration:1]];
-    });
+//    SKScene *scene = [RotationLevel2Scene unarchiveFromFile:@"RotationLevel2Scene"];
+//    scene.scaleMode = SKSceneScaleModeAspectFill;
+//    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.75 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.view presentScene:scene transition:[SKTransition fadeWithColor:[UIColor colorWithRed:13/255.0 green:13/255.0 blue:13/255.0 alpha:1] duration:1]];
+//    });
 }
 
 @end

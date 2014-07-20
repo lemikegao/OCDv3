@@ -29,6 +29,9 @@
 #import "Level15Scene.h"
 #import "Level16Scene.h"
 
+// Triangles
+#import "TriangleLevel1Scene.h"
+
 // Rotation
 #import "RotationLevel1Scene.h"
 #import "RotationLevel2Scene.h"
@@ -79,7 +82,7 @@
     [skView addSubview:versionLabel];
     
     // Create and configure the scene.
-    NSIndexPath *levelIndexPath = [NSIndexPath indexPathForRow:0 inSection:LevelSectionTypeRotation];
+    NSIndexPath *levelIndexPath = [NSIndexPath indexPathForRow:0 inSection:LevelSectionTypeTriangles];
     [self _loadLevelAtIndexPath:levelIndexPath];
 }
 
@@ -178,6 +181,17 @@
                 
             case 16:
                 scene = [Level16Scene unarchiveFromFile:@"Level16Scene"];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    else if (levelIndexPath.section == LevelSectionTypeTriangles)
+    {
+        switch (level) {
+            case 1:
+                scene = [TriangleLevel1Scene unarchiveFromFile:@"TriangleLevel1Scene"];
                 break;
                 
             default:
