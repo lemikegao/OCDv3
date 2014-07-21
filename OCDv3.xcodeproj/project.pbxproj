@@ -16,7 +16,6 @@
 		3E440ED71953FC920074D667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E440ED61953FC920074D667 /* main.m */; };
 		3E440EE51953FC920074D667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E440EE31953FC920074D667 /* Main.storyboard */; };
 		3E440EF31953FC920074D667 /* OCDv3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E440EF21953FC920074D667 /* OCDv3Tests.m */; };
-		3E54B8A9195FCB0200C2BD90 /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E54B8A8195FCB0200C2BD90 /* TutorialScene.sks */; };
 		3E6620C41968AF890020BA4E /* Level10Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620A51968AF890020BA4E /* Level10Scene.m */; };
 		3E6620C51968AF890020BA4E /* Level11Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620A71968AF890020BA4E /* Level11Scene.m */; };
 		3E6620C61968AF890020BA4E /* Level12Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620A91968AF890020BA4E /* Level12Scene.m */; };
@@ -52,13 +51,16 @@
 		3E6620F71968B1120020BA4E /* RotationLevel1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E6620F61968B1120020BA4E /* RotationLevel1Scene.sks */; };
 		3E6620FA1968B1BB0020BA4E /* RotationLevel1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620F91968B1BB0020BA4E /* RotationLevel1Scene.m */; };
 		3E8ECFFE197C8E1900092851 /* TutorialScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ECFFD197C8E1900092851 /* TutorialScene.m */; };
+		3E8ED003197C931800092851 /* TutorialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E8ED002197C931800092851 /* TutorialScene.sks */; };
+		3E8ED007197C952900092851 /* SKScene+Unarchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED006197C952900092851 /* SKScene+Unarchive.m */; };
+		3E8ED00A197C963500092851 /* OCDLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED009197C963500092851 /* OCDLevelScene.m */; };
+		3E8ED00D197CA24800092851 /* OCDSquareLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */; };
 		3ECC3FB2197C70EF006D2AC4 /* TriangleLevel1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */; };
 		3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */; };
 		3EDADD51195600BC008C8905 /* Assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3EDADD45195600BC008C8905 /* Assets.atlas */; };
 		3EDADD52195600BC008C8905 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDADD46195600BC008C8905 /* Images.xcassets */; };
 		3EDADD53195600BC008C8905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDADD49195600BC008C8905 /* AppDelegate.m */; };
 		3EDADD54195600BC008C8905 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDADD4B195600BC008C8905 /* GameViewController.m */; };
-		3EDADD56195600BC008C8905 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EDADD50195600BC008C8905 /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +90,6 @@
 		3E440EEC1953FC920074D667 /* OCDv3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCDv3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E440EF11953FC920074D667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E440EF21953FC920074D667 /* OCDv3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDv3Tests.m; sourceTree = "<group>"; };
-		3E54B8A8195FCB0200C2BD90 /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
 		3E6620A41968AF890020BA4E /* Level10Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level10Scene.h; sourceTree = "<group>"; };
 		3E6620A51968AF890020BA4E /* Level10Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level10Scene.m; sourceTree = "<group>"; };
 		3E6620A61968AF890020BA4E /* Level11Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level11Scene.h; sourceTree = "<group>"; };
@@ -142,6 +143,13 @@
 		3E6620F91968B1BB0020BA4E /* RotationLevel1Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationLevel1Scene.m; sourceTree = "<group>"; };
 		3E8ECFFC197C8E1900092851 /* TutorialScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialScene.h; sourceTree = "<group>"; };
 		3E8ECFFD197C8E1900092851 /* TutorialScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialScene.m; sourceTree = "<group>"; };
+		3E8ED002197C931800092851 /* TutorialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TutorialScene.sks; sourceTree = "<group>"; };
+		3E8ED005197C952900092851 /* SKScene+Unarchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKScene+Unarchive.h"; sourceTree = "<group>"; };
+		3E8ED006197C952900092851 /* SKScene+Unarchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKScene+Unarchive.m"; sourceTree = "<group>"; };
+		3E8ED008197C963500092851 /* OCDLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDLevelScene.h; sourceTree = "<group>"; };
+		3E8ED009197C963500092851 /* OCDLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDLevelScene.m; sourceTree = "<group>"; };
+		3E8ED00B197CA24800092851 /* OCDSquareLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSquareLevelScene.h; sourceTree = "<group>"; };
+		3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSquareLevelScene.m; sourceTree = "<group>"; };
 		3ECC3FB0197C70EF006D2AC4 /* TriangleLevel1Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleLevel1Scene.h; sourceTree = "<group>"; };
 		3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleLevel1Scene.m; sourceTree = "<group>"; };
 		3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TriangleLevel1Scene.sks; sourceTree = "<group>"; };
@@ -151,7 +159,6 @@
 		3EDADD49195600BC008C8905 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EDADD4A195600BC008C8905 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		3EDADD4B195600BC008C8905 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		3EDADD50195600BC008C8905 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +329,23 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
+		3E8ED001197C931800092851 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				3E8ED002197C931800092851 /* TutorialScene.sks */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		3E8ED004197C951400092851 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3E8ED005197C952900092851 /* SKScene+Unarchive.h */,
+				3E8ED006197C952900092851 /* SKScene+Unarchive.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		3ECC3FAF197C70DE006D2AC4 /* Trangles */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +383,7 @@
 				3E3E095419569F99006D87BE /* LevelSelectionViewController.m */,
 				3E3E095519569F99006D87BE /* LevelSelectionViewController.xib */,
 				3EDADD4C195600BC008C8905 /* Scenes */,
+				3E8ED004197C951400092851 /* Categories */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -366,6 +391,10 @@
 		3EDADD4C195600BC008C8905 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3E8ED008197C963500092851 /* OCDLevelScene.h */,
+				3E8ED009197C963500092851 /* OCDLevelScene.m */,
+				3E8ED00B197CA24800092851 /* OCDSquareLevelScene.h */,
+				3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */,
 				3E8ECFFB197C8E1900092851 /* Tutorial */,
 				3E6620A31968AF890020BA4E /* Squares */,
 				3ECC3FAF197C70DE006D2AC4 /* Trangles */,
@@ -377,8 +406,7 @@
 		3EDADD4F195600BC008C8905 /* Scene Layouts */ = {
 			isa = PBXGroup;
 			children = (
-				3EDADD50195600BC008C8905 /* GameScene.sks */,
-				3E54B8A8195FCB0200C2BD90 /* TutorialScene.sks */,
+				3E8ED001197C931800092851 /* Tutorial */,
 				3E6620D51968AFA60020BA4E /* Squares */,
 				3ECC3FB3197C789D006D2AC4 /* Triangles */,
 				3E6620D41968AFA60020BA4E /* Rotation */,
@@ -395,6 +423,7 @@
 			buildPhases = (
 				3E440ECD1953FC920074D667 /* Sources */,
 				3E440ECE1953FC920074D667 /* Frameworks */,
+				3E8ED000197C8E8500092851 /* ShellScript */,
 				3E440ECF1953FC920074D667 /* Resources */,
 			);
 			buildRules = (
@@ -468,13 +497,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E0B96261969543B007688EB /* RotationLevel3Scene.sks in Resources */,
-				3EDADD56195600BC008C8905 /* GameScene.sks in Resources */,
 				3E6620F51968AFA60020BA4E /* Level9Scene.sks in Resources */,
 				3E6620E91968AFA60020BA4E /* Level13Scene.sks in Resources */,
 				3E6620EA1968AFA60020BA4E /* Level14Scene.sks in Resources */,
 				3E6620ED1968AFA60020BA4E /* Level1Scene.sks in Resources */,
 				3E6620F41968AFA60020BA4E /* Level8Scene.sks in Resources */,
-				3E54B8A9195FCB0200C2BD90 /* TutorialScene.sks in Resources */,
 				3EDADD52195600BC008C8905 /* Images.xcassets in Resources */,
 				3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */,
 				3E3E095719569F99006D87BE /* LevelSelectionViewController.xib in Resources */,
@@ -490,6 +517,7 @@
 				3E6620E71968AFA60020BA4E /* Level11Scene.sks in Resources */,
 				3E6620EE1968AFA60020BA4E /* Level2Scene.sks in Resources */,
 				3E6620F01968AFA60020BA4E /* Level4Scene.sks in Resources */,
+				3E8ED003197C931800092851 /* TutorialScene.sks in Resources */,
 				3E6620EB1968AFA60020BA4E /* Level15Scene.sks in Resources */,
 				3E6620EC1968AFA60020BA4E /* Level16Scene.sks in Resources */,
 				3E6620F11968AFA60020BA4E /* Level5Scene.sks in Resources */,
@@ -505,6 +533,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E8ED000197C8E8500092851 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E440ECD1953FC920074D667 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -512,11 +556,14 @@
 			files = (
 				3E0B9622196952B0007688EB /* RotationLevel2Scene.m in Sources */,
 				3E6620C41968AF890020BA4E /* Level10Scene.m in Sources */,
+				3E8ED00A197C963500092851 /* OCDLevelScene.m in Sources */,
+				3E8ED007197C952900092851 /* SKScene+Unarchive.m in Sources */,
 				3E6620CD1968AF890020BA4E /* Level3Scene.m in Sources */,
 				3E6620CE1968AF890020BA4E /* Level4Scene.m in Sources */,
 				3E6620CB1968AF890020BA4E /* Level1Scene.m in Sources */,
 				3E6620C81968AF890020BA4E /* Level14Scene.m in Sources */,
 				3E6620D01968AF890020BA4E /* Level6Scene.m in Sources */,
+				3E8ED00D197CA24800092851 /* OCDSquareLevelScene.m in Sources */,
 				3E6620CF1968AF890020BA4E /* Level5Scene.m in Sources */,
 				3E6620C51968AF890020BA4E /* Level11Scene.m in Sources */,
 				3E6620C61968AF890020BA4E /* Level12Scene.m in Sources */,
