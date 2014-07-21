@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import <SpriteKit/SpriteKit.h>
+#import "OCDSquareLevelScene.h"
 
-@interface RotationLevel3Scene : SKScene
+@interface RotationLevel3Scene : OCDSquareLevelScene
 
 @end
