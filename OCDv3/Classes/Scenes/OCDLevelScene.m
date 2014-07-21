@@ -9,7 +9,7 @@
 #import "OCDLevelScene.h"
 
 NSString *const OCDLevelSceneBorderName = @"OCDLevelSceneBorderName";
-CGFloat const OCDLevelSceneMaxLockDistance = 24;
+CGFloat const OCDLevelSceneMaxLockDistance = 20;
 
 @interface OCDLevelScene()
 
@@ -47,7 +47,7 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
 -(void)didMoveToView:(SKView *)view
 {
     CGRect frame = self.frame;
-    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(frame.origin.x - 150, frame.origin.y - 150, frame.size.width + 300, frame.size.height + 300)];
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(frame.origin.x - 75, frame.origin.y - 75, frame.size.width + 150, frame.size.height + 150)];
 }
 
 #pragma mark - Methods to override by subclass

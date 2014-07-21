@@ -23,7 +23,7 @@
 
 - (SKSpriteNode *)borderForSpriteNode:(SKSpriteNode *)node locked:(BOOL)locked
 {
-    CGFloat borderWidth = 36;
+    CGFloat borderWidth = 18;
     return [SKSpriteNode spriteNodeWithColor:[node.color colorWithAlphaComponent:0.5] size:CGSizeMake(node.size.width + borderWidth, node.size.height + borderWidth)];
 
 }
