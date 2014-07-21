@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import "OCDSquareLevelScene.h"
+#import "OCDRotationLevelScene.h"
 
-@interface RotationLevel1Scene : OCDSquareLevelScene
+@interface RotationLevel1Scene : OCDRotationLevelScene
 
 @end

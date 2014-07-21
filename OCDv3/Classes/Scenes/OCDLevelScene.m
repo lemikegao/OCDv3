@@ -174,8 +174,9 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
     __block BOOL retVal = NO;
     
     [self enumerateChildNodesWithName:[NSString stringWithFormat:@"%@-target", object.name] usingBlock:^(SKNode *node, BOOL *stop) {
-        if ([self _checkForObjectLock:object withPossibleTarget:node])
+        if ([self shouldLockObject:object withPossibleTarget:node])
         {
+            [self _lockObject:object withTarget:node];
             retVal = *stop = YES;
         }
     }];
@@ -183,8 +184,9 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
     if (retVal == NO)
     {
         [self enumerateChildNodesWithName:[NSString stringWithFormat:@"%@-target-hidden", object.name] usingBlock:^(SKNode *node, BOOL *stop) {
-            if ([self _checkForObjectLock:object withPossibleTarget:node])
+            if ([self shouldLockObject:object withPossibleTarget:node])
             {
+                [self _lockObject:object withTarget:node];
                 retVal = *stop = YES;
             }
         }];
@@ -193,7 +195,7 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
     return retVal;
 }
 
-- (BOOL)_checkForObjectLock:(SKSpriteNode *)object withPossibleTarget:(SKNode *)possibleTarget
+- (BOOL)shouldLockObject:(SKSpriteNode *)object withPossibleTarget:(SKNode *)possibleTarget
 {
     if ([object.color isEqual:[(SKSpriteNode *)possibleTarget color]])
     {
@@ -203,8 +205,6 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
         
         if (xDistance <= OCDLevelSceneMaxLockDistance && yDistance <= OCDLevelSceneMaxLockDistance)
         {
-            [self _lockObject:object withTarget:possibleTarget];
-            
             return YES;
         }
     }

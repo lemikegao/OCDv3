@@ -55,6 +55,7 @@
 		3E8ED007197C952900092851 /* SKScene+Unarchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED006197C952900092851 /* SKScene+Unarchive.m */; };
 		3E8ED00A197C963500092851 /* OCDLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED009197C963500092851 /* OCDLevelScene.m */; };
 		3E8ED00D197CA24800092851 /* OCDSquareLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */; };
+		3E8ED010197CD3F400092851 /* OCDRotationLevelScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8ED00F197CD3F400092851 /* OCDRotationLevelScene.m */; };
 		3ECC3FB2197C70EF006D2AC4 /* TriangleLevel1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */; };
 		3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */; };
 		3EDADD51195600BC008C8905 /* Assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3EDADD45195600BC008C8905 /* Assets.atlas */; };
@@ -148,8 +149,10 @@
 		3E8ED006197C952900092851 /* SKScene+Unarchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKScene+Unarchive.m"; sourceTree = "<group>"; };
 		3E8ED008197C963500092851 /* OCDLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDLevelScene.h; sourceTree = "<group>"; };
 		3E8ED009197C963500092851 /* OCDLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDLevelScene.m; sourceTree = "<group>"; };
-		3E8ED00B197CA24800092851 /* OCDSquareLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDSquareLevelScene.h; sourceTree = "<group>"; };
-		3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDSquareLevelScene.m; sourceTree = "<group>"; };
+		3E8ED00B197CA24800092851 /* OCDSquareLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCDSquareLevelScene.h; path = ../OCDSquareLevelScene.h; sourceTree = "<group>"; };
+		3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OCDSquareLevelScene.m; path = ../OCDSquareLevelScene.m; sourceTree = "<group>"; };
+		3E8ED00E197CD3F400092851 /* OCDRotationLevelScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDRotationLevelScene.h; sourceTree = "<group>"; };
+		3E8ED00F197CD3F400092851 /* OCDRotationLevelScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDRotationLevelScene.m; sourceTree = "<group>"; };
 		3ECC3FB0197C70EF006D2AC4 /* TriangleLevel1Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleLevel1Scene.h; sourceTree = "<group>"; };
 		3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleLevel1Scene.m; sourceTree = "<group>"; };
 		3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TriangleLevel1Scene.sks; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 		3E6620A21968AF600020BA4E /* Rotation */ = {
 			isa = PBXGroup;
 			children = (
+				3E8ED00E197CD3F400092851 /* OCDRotationLevelScene.h */,
+				3E8ED00F197CD3F400092851 /* OCDRotationLevelScene.m */,
 				3E6620F81968B1BB0020BA4E /* RotationLevel1Scene.h */,
 				3E6620F91968B1BB0020BA4E /* RotationLevel1Scene.m */,
 				3E0B9620196952B0007688EB /* RotationLevel2Scene.h */,
@@ -251,6 +256,8 @@
 		3E6620A31968AF890020BA4E /* Squares */ = {
 			isa = PBXGroup;
 			children = (
+				3E8ED00B197CA24800092851 /* OCDSquareLevelScene.h */,
+				3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */,
 				3E6620B21968AF890020BA4E /* Level1Scene.h */,
 				3E6620B31968AF890020BA4E /* Level1Scene.m */,
 				3E6620B41968AF890020BA4E /* Level2Scene.h */,
@@ -393,8 +400,6 @@
 			children = (
 				3E8ED008197C963500092851 /* OCDLevelScene.h */,
 				3E8ED009197C963500092851 /* OCDLevelScene.m */,
-				3E8ED00B197CA24800092851 /* OCDSquareLevelScene.h */,
-				3E8ED00C197CA24800092851 /* OCDSquareLevelScene.m */,
 				3E8ECFFB197C8E1900092851 /* Tutorial */,
 				3E6620A31968AF890020BA4E /* Squares */,
 				3ECC3FAF197C70DE006D2AC4 /* Trangles */,
@@ -559,6 +564,7 @@
 				3E8ED00A197C963500092851 /* OCDLevelScene.m in Sources */,
 				3E8ED007197C952900092851 /* SKScene+Unarchive.m in Sources */,
 				3E6620CD1968AF890020BA4E /* Level3Scene.m in Sources */,
+				3E8ED010197CD3F400092851 /* OCDRotationLevelScene.m in Sources */,
 				3E6620CE1968AF890020BA4E /* Level4Scene.m in Sources */,
 				3E6620CB1968AF890020BA4E /* Level1Scene.m in Sources */,
 				3E6620C81968AF890020BA4E /* Level14Scene.m in Sources */,
