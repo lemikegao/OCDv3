@@ -1,5 +1,5 @@
 //
-//  TriangleLevel1Scene.h
+//  OCDTriangleLevelScene.h
 //  OCDv3
 //
 //  Created by Michael Gao on 7/20/14.
@@ -8,6 +8,6 @@
 
 #import "OCDSquareLevelScene.h"
 
-@interface TriangleLevel1Scene : OCDSquareLevelScene
+@interface OCDTriangleLevelScene : OCDSquareLevelScene
 
 @end

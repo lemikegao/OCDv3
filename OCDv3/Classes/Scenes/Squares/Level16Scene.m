@@ -7,7 +7,7 @@
 //
 
 #import "Level16Scene.h"
-#import "RotationLevel1Scene.h"
+#import "TriangleLevel1Scene.h"
 
 @implementation Level16Scene
 
@@ -18,7 +18,7 @@
 
 - (SKScene *)nextLevelScene
 {
-    return [RotationLevel1Scene new];
+    return [TriangleLevel1Scene new];
 }
 
 @end
