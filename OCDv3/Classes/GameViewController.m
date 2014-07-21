@@ -57,7 +57,7 @@
     skView.ignoresSiblingOrder = YES;
     
     // Add version (build) label
-    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, skView.bounds.size.height - 18, 100, 18)];
+    UILabel *versionLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, skView.bounds.size.height - 22, 100, 18)];
     versionLabel.font = [UIFont fontWithName:@"Helvetica" size:16];
     versionLabel.backgroundColor = [UIColor clearColor];
     versionLabel.textColor = [UIColor blackColor];
@@ -83,12 +83,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)_loadLevelAtIndexPath:(NSIndexPath*)levelIndexPath
 {
     SKView * skView = (SKView *)self.view;
@@ -97,73 +91,73 @@
     
     if (levelIndexPath.section == LevelSectionTypeTutorial)
     {
-        scene = [TutorialScene unarchiveFromFile:@"TutorialScene"];
+        scene = [TutorialScene new];
     }
     else if (levelIndexPath.section == LevelSectionTypeSquares)
     {
         switch (level) {
             case 1:
-                scene = [Level1Scene unarchiveFromFile:@"Level1Scene"];
+                scene = [Level1Scene new];
                 break;
                 
             case 2:
-                scene = [Level2Scene unarchiveFromFile:@"Level2Scene"];
+                scene = [Level2Scene new];
                 break;
                 
             case 3:
-                scene = [Level3Scene unarchiveFromFile:@"Level3Scene"];
+                scene = [Level3Scene new];
                 break;
                 
             case 4:
-                scene = [Level4Scene unarchiveFromFile:@"Level4Scene"];
+                scene = [Level4Scene new];
                 break;
                 
             case 5:
-                scene = [Level5Scene unarchiveFromFile:@"Level5Scene"];
+                scene = [Level5Scene new];
                 break;
                 
             case 6:
-                scene = [Level6Scene unarchiveFromFile:@"Level6Scene"];
+                scene = [Level6Scene new];
                 break;
                 
             case 7:
-                scene = [Level7Scene unarchiveFromFile:@"Level7Scene"];
+                scene = [Level7Scene new];
                 break;
                 
             case 8:
-                scene = [Level8Scene unarchiveFromFile:@"Level8Scene"];
+                scene = [Level8Scene new];
                 break;
                 
             case 9:
-                scene = [Level9Scene unarchiveFromFile:@"Level9Scene"];
+                scene = [Level9Scene new];
                 break;
                 
             case 10:
-                scene = [Level10Scene unarchiveFromFile:@"Level10Scene"];
+                scene = [Level10Scene new];
                 break;
                 
             case 11:
-                scene = [Level11Scene unarchiveFromFile:@"Level11Scene"];
+                scene = [Level11Scene new];
                 break;
                 
             case 12:
-                scene = [Level12Scene unarchiveFromFile:@"Level12Scene"];
+                scene = [Level12Scene new];
                 break;
                 
             case 13:
-                scene = [Level13Scene unarchiveFromFile:@"Level13Scene"];
+                scene = [Level13Scene new];
                 break;
                 
             case 14:
-                scene = [Level14Scene unarchiveFromFile:@"Level14Scene"];
+                scene = [Level14Scene new];
                 break;
                 
             case 15:
-                scene = [Level15Scene unarchiveFromFile:@"Level15Scene"];
+                scene = [Level15Scene new];
                 break;
                 
             case 16:
-                scene = [Level16Scene unarchiveFromFile:@"Level16Scene"];
+                scene = [Level16Scene new];
                 break;
                 
             default:
@@ -174,7 +168,7 @@
     {
         switch (level) {
             case 1:
-                scene = [TriangleLevel1Scene unarchiveFromFile:@"TriangleLevel1Scene"];
+                scene = [TriangleLevel1Scene new];
                 break;
                 
             default:
@@ -185,15 +179,15 @@
     {
         switch (level) {
             case 1:
-                scene = [RotationLevel1Scene unarchiveFromFile:@"RotationLevel1Scene"];
+                scene = [RotationLevel1Scene new];
                 break;
                 
             case 2:
-                scene = [RotationLevel2Scene unarchiveFromFile:@"RotationLevel2Scene"];
+                scene = [RotationLevel2Scene new];
                 break;
                 
             case 3:
-                scene = [RotationLevel3Scene unarchiveFromFile:@"RotationLevel3Scene"];
+                scene = [RotationLevel3Scene new];
                 break;
                 
             default:
@@ -201,6 +195,7 @@
         }
     }
     
+    scene = [scene unarchiveFromFile:NSStringFromClass([scene class])];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     [skView presentScene:scene];
 }
