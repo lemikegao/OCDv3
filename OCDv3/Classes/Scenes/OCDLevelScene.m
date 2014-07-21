@@ -154,10 +154,11 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
         return;
     }
     
-    // Remove border
-    [self.selectedNode removeAllChildren];
-    
-    [self _checkForObjectLock:self.selectedNode];
+    if ([self _checkForObjectLock:self.selectedNode] == NO)
+    {
+        // Remove border if object did not lock
+        [self.selectedNode removeAllChildren];
+    }
     
     self.selectedNode = nil;
     
@@ -168,23 +169,28 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
     }
 }
 
-- (void)_checkForObjectLock:(SKSpriteNode *)object
+- (BOOL)_checkForObjectLock:(SKSpriteNode *)object
 {
+    __block BOOL retVal = NO;
+    
     [self enumerateChildNodesWithName:[NSString stringWithFormat:@"%@-target", object.name] usingBlock:^(SKNode *node, BOOL *stop) {
         if ([self _checkForObjectLock:object withPossibleTarget:node])
         {
-            *stop = YES;
-            return;
+            retVal = *stop = YES;
         }
     }];
     
-    [self enumerateChildNodesWithName:[NSString stringWithFormat:@"%@-target-hidden", object.name] usingBlock:^(SKNode *node, BOOL *stop) {
-        if ([self _checkForObjectLock:object withPossibleTarget:node])
-        {
-            *stop = YES;
-            return;
-        }
-    }];
+    if (retVal == NO)
+    {
+        [self enumerateChildNodesWithName:[NSString stringWithFormat:@"%@-target-hidden", object.name] usingBlock:^(SKNode *node, BOOL *stop) {
+            if ([self _checkForObjectLock:object withPossibleTarget:node])
+            {
+                retVal = *stop = YES;
+            }
+        }];
+    }
+    
+    return retVal;
 }
 
 - (BOOL)_checkForObjectLock:(SKSpriteNode *)object withPossibleTarget:(SKNode *)possibleTarget
@@ -220,6 +226,10 @@ CGFloat const OCDLevelSceneMaxLockDistance = 24;
     // Shrink border animation
     if ([self needsCustomBorderForSpriteNode:object locked:YES])
     {
+        // Remove any existing borders
+        [object removeAllChildren];
+        
+        // Add new locked border
         SKSpriteNode *border = [self borderForSpriteNode:object locked:YES];
         border.userInteractionEnabled = NO;
         border.physicsBody.pinned = YES;
