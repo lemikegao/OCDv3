@@ -21,4 +21,13 @@
     }];
 }
 
+- (BOOL)shouldLockObject:(SKSpriteNode *)object withPossibleTarget:(SKNode *)possibleTarget
+{
+    CGFloat objectRotation = object.zRotation < 0 ? object.zRotation + 2*M_PI : object.zRotation;
+    CGFloat targetRotation = possibleTarget.zRotation < 0 ? possibleTarget.zRotation + 2*M_PI : possibleTarget.zRotation;
+    
+    // Make sure the triangles are set at the same angle
+    return ([super shouldLockObject:object withPossibleTarget:possibleTarget] && objectRotation == targetRotation);
+}
+
 @end

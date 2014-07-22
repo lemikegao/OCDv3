@@ -65,7 +65,7 @@
     [skView addSubview:versionLabel];
     
     // Create and configure the scene.
-    NSIndexPath *levelIndexPath = [NSIndexPath indexPathForRow:0 inSection:LevelSectionTypeTutorial];
+    NSIndexPath *levelIndexPath = [NSIndexPath indexPathForRow:0 inSection:LevelSectionTypeTriangles];
     [self _loadLevelAtIndexPath:levelIndexPath];
 }
 

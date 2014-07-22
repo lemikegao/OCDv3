@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import "OCDSquareLevelScene.h"
+#import "OCDTriangleLevelScene.h"
 
-@interface TriangleLevel1Scene : OCDSquareLevelScene
+@interface TriangleLevel1Scene : OCDTriangleLevelScene
 
 @end
