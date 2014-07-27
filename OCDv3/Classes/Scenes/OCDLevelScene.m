@@ -218,6 +218,7 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
     
     // Snap into place
     object.position = target.position;
+    object.zPosition = -1;
     
     // Disable user interaction
     object.userInteractionEnabled = NO;
