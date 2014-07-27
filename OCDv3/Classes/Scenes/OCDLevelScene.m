@@ -130,7 +130,6 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
         SKSpriteNode *border = [self borderForSpriteNode:touchedNode locked:NO];
         border.userInteractionEnabled = NO;
         border.name = OCDLevelSceneBorderName;
-        border.position = CGPointZero;
         border.zPosition = -10;
         [touchedNode addChild:border];
     }
