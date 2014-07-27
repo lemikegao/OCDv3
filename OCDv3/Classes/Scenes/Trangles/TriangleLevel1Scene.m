@@ -7,7 +7,7 @@
 //
 
 #import "TriangleLevel1Scene.h"
-#import "RotationLevel1Scene.h"
+#import "TriangleLevel2Scene.h"
 
 @implementation TriangleLevel1Scene
 
@@ -18,7 +18,7 @@
 
 - (SKScene *)nextLevelScene
 {
-    return [RotationLevel1Scene new];
+    return [TriangleLevel2Scene new];
 }
 
 @end

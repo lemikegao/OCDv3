@@ -32,15 +32,19 @@
 
 - (SKSpriteNode *)borderForSpriteNode:(SKSpriteNode *)node locked:(BOOL)locked
 {
-    CGFloat borderWidth = 26;
-    SKSpriteNode *border = [SKSpriteNode spriteNodeWithImageNamed:@"triangle"];
-    border.color = [node.color colorWithAlphaComponent:0.5];
-    border.colorBlendFactor = 1;
-    border.size = CGSizeMake(node.size.width + borderWidth, node.size.height + borderWidth);
-    border.anchorPoint = CGPointMake(0.47, 0.52);
-//    border.position = CGPointMake(8, -4);
+    if ([node.name isEqual:@"triangle"])
+    {
+        CGFloat borderWidth = 26;
+        SKSpriteNode *border = [SKSpriteNode spriteNodeWithImageNamed:@"triangle"];
+        border.color = [node.color colorWithAlphaComponent:0.5];
+        border.colorBlendFactor = 1;
+        border.size = CGSizeMake(node.size.width + borderWidth, node.size.height + borderWidth);
+        border.anchorPoint = CGPointMake(0.47, 0.52);
     
-    return border;
+        return border;
+    }
+    
+    return [super borderForSpriteNode:node locked:locked];
 }
 
 @end

@@ -11,6 +11,8 @@
 		3E0B9624196952BA007688EB /* RotationLevel2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E0B9623196952BA007688EB /* RotationLevel2Scene.sks */; };
 		3E0B96261969543B007688EB /* RotationLevel3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E0B96251969543B007688EB /* RotationLevel3Scene.sks */; };
 		3E0B9629196955D8007688EB /* RotationLevel3Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0B9628196955D8007688EB /* RotationLevel3Scene.m */; };
+		3E29544619848722000CA889 /* TriangleLevel2Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E29544519848722000CA889 /* TriangleLevel2Scene.m */; };
+		3E2954481984875F000CA889 /* TriangleLevel2Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E2954471984875F000CA889 /* TriangleLevel2Scene.sks */; };
 		3E3E095619569F99006D87BE /* LevelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3E095419569F99006D87BE /* LevelSelectionViewController.m */; };
 		3E3E095719569F99006D87BE /* LevelSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E095519569F99006D87BE /* LevelSelectionViewController.xib */; };
 		3E440ED71953FC920074D667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E440ED61953FC920074D667 /* main.m */; };
@@ -82,6 +84,9 @@
 		3E0B96251969543B007688EB /* RotationLevel3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RotationLevel3Scene.sks; sourceTree = "<group>"; };
 		3E0B9627196955D8007688EB /* RotationLevel3Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationLevel3Scene.h; sourceTree = "<group>"; };
 		3E0B9628196955D8007688EB /* RotationLevel3Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationLevel3Scene.m; sourceTree = "<group>"; };
+		3E29544419848722000CA889 /* TriangleLevel2Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleLevel2Scene.h; sourceTree = "<group>"; };
+		3E29544519848722000CA889 /* TriangleLevel2Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleLevel2Scene.m; sourceTree = "<group>"; };
+		3E2954471984875F000CA889 /* TriangleLevel2Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TriangleLevel2Scene.sks; sourceTree = "<group>"; };
 		3E3E095319569F99006D87BE /* LevelSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectionViewController.h; sourceTree = "<group>"; };
 		3E3E095419569F99006D87BE /* LevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectionViewController.m; sourceTree = "<group>"; };
 		3E3E095519569F99006D87BE /* LevelSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelSelectionViewController.xib; sourceTree = "<group>"; };
@@ -363,6 +368,8 @@
 				3E8ED012197CDA1100092851 /* OCDTriangleLevelScene.m */,
 				3ECC3FB0197C70EF006D2AC4 /* TriangleLevel1Scene.h */,
 				3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */,
+				3E29544419848722000CA889 /* TriangleLevel2Scene.h */,
+				3E29544519848722000CA889 /* TriangleLevel2Scene.m */,
 			);
 			path = Trangles;
 			sourceTree = "<group>";
@@ -371,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */,
+				3E2954471984875F000CA889 /* TriangleLevel2Scene.sks */,
 			);
 			path = Triangles;
 			sourceTree = "<group>";
@@ -514,6 +522,7 @@
 				3E6620F41968AFA60020BA4E /* Level8Scene.sks in Resources */,
 				3EDADD52195600BC008C8905 /* Images.xcassets in Resources */,
 				3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */,
+				3E2954481984875F000CA889 /* TriangleLevel2Scene.sks in Resources */,
 				3E3E095719569F99006D87BE /* LevelSelectionViewController.xib in Resources */,
 				3E6620F71968B1120020BA4E /* RotationLevel1Scene.sks in Resources */,
 				3E6620EF1968AFA60020BA4E /* Level3Scene.sks in Resources */,
@@ -567,6 +576,7 @@
 				3E0B9622196952B0007688EB /* RotationLevel2Scene.m in Sources */,
 				3E6620C41968AF890020BA4E /* Level10Scene.m in Sources */,
 				3E8ED00A197C963500092851 /* OCDLevelScene.m in Sources */,
+				3E29544619848722000CA889 /* TriangleLevel2Scene.m in Sources */,
 				3E8ED007197C952900092851 /* SKScene+Unarchive.m in Sources */,
 				3E6620CD1968AF890020BA4E /* Level3Scene.m in Sources */,
 				3E8ED010197CD3F400092851 /* OCDRotationLevelScene.m in Sources */,
