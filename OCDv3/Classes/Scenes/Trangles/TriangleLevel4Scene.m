@@ -1,24 +1,25 @@
 //
-//  TriangleLevel2Scene.m
+//  TriangleLevel4Scene.m
 //  OCDv3
 //
 //  Created by Michael Gao on 7/26/14.
 //  Copyright (c) 2014 Chin and Cheeks. All rights reserved.
 //
 
-#import "TriangleLevel2Scene.h"
-#import "TriangleLevel3Scene.h"
+#import "TriangleLevel4Scene.h"
+#import "RotationLevel1Scene.h"
 
-@implementation TriangleLevel2Scene
+@implementation TriangleLevel4Scene
 
 - (NSUInteger)numObjects
 {
-    return 5;
+    return 9;
 }
 
 - (SKScene *)nextLevelScene
 {
-    return [TriangleLevel3Scene new];
+    return [RotationLevel1Scene new];
 }
+
 
 @end
