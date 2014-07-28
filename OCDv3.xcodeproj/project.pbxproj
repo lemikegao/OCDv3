@@ -69,6 +69,8 @@
 		3EDADD52195600BC008C8905 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EDADD46195600BC008C8905 /* Images.xcassets */; };
 		3EDADD53195600BC008C8905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDADD49195600BC008C8905 /* AppDelegate.m */; };
 		3EDADD54195600BC008C8905 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDADD4B195600BC008C8905 /* GameViewController.m */; };
+		3EE049801985AB300087B43C /* TriangleLevel5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EE0497F1985AB300087B43C /* TriangleLevel5Scene.sks */; };
+		3EE049831985CBB80087B43C /* TriangleLevel5Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE049821985CBB80087B43C /* TriangleLevel5Scene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +182,9 @@
 		3EDADD49195600BC008C8905 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3EDADD4A195600BC008C8905 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		3EDADD4B195600BC008C8905 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		3EE0497F1985AB300087B43C /* TriangleLevel5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TriangleLevel5Scene.sks; sourceTree = "<group>"; };
+		3EE049811985CBB80087B43C /* TriangleLevel5Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleLevel5Scene.h; sourceTree = "<group>"; };
+		3EE049821985CBB80087B43C /* TriangleLevel5Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleLevel5Scene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +389,8 @@
 				3ED7BFC61984ABA50045CAAE /* TriangleLevel3Scene.m */,
 				3ED7BFCA1984B2670045CAAE /* TriangleLevel4Scene.h */,
 				3ED7BFCB1984B2670045CAAE /* TriangleLevel4Scene.m */,
+				3EE049811985CBB80087B43C /* TriangleLevel5Scene.h */,
+				3EE049821985CBB80087B43C /* TriangleLevel5Scene.m */,
 			);
 			path = Trangles;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 				3E2954471984875F000CA889 /* TriangleLevel2Scene.sks */,
 				3ED7BFC81984AC070045CAAE /* TriangleLevel3Scene.sks */,
 				3ED7BFCD1984B2A30045CAAE /* TriangleLevel4Scene.sks */,
+				3EE0497F1985AB300087B43C /* TriangleLevel5Scene.sks */,
 			);
 			path = Triangles;
 			sourceTree = "<group>";
@@ -537,6 +545,7 @@
 				3E6620EA1968AFA60020BA4E /* Level14Scene.sks in Resources */,
 				3E6620ED1968AFA60020BA4E /* Level1Scene.sks in Resources */,
 				3E6620F41968AFA60020BA4E /* Level8Scene.sks in Resources */,
+				3EE049801985AB300087B43C /* TriangleLevel5Scene.sks in Resources */,
 				3EDADD52195600BC008C8905 /* Images.xcassets in Resources */,
 				3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */,
 				3E2954481984875F000CA889 /* TriangleLevel2Scene.sks in Resources */,
@@ -596,6 +605,7 @@
 				3E8ED00A197C963500092851 /* OCDLevelScene.m in Sources */,
 				3E29544619848722000CA889 /* TriangleLevel2Scene.m in Sources */,
 				3ED7BFCC1984B2670045CAAE /* TriangleLevel4Scene.m in Sources */,
+				3EE049831985CBB80087B43C /* TriangleLevel5Scene.m in Sources */,
 				3E8ED007197C952900092851 /* SKScene+Unarchive.m in Sources */,
 				3E6620CD1968AF890020BA4E /* Level3Scene.m in Sources */,
 				3E8ED010197CD3F400092851 /* OCDRotationLevelScene.m in Sources */,
