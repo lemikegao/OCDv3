@@ -36,6 +36,7 @@
 #import "TriangleLevel2Scene.h"
 #import "TriangleLevel3Scene.h"
 #import "TriangleLevel4Scene.h"
+#import "TriangleLevel5Scene.h"
 
 // Rotation
 #import "RotationLevel1Scene.h"
@@ -184,6 +185,10 @@
                 
             case 4:
                 scene = [TriangleLevel4Scene new];
+                break;
+                
+            case 5:
+                scene = [TriangleLevel5Scene new];
                 break;
                 
             default:

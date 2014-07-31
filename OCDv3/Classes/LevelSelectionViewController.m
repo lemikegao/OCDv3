@@ -9,7 +9,7 @@
 #import "LevelSelectionViewController.h"
 
 static const NSUInteger kNumSquareLevels = 16;
-static const NSUInteger kNumTriangleLevels = 4;
+static const NSUInteger kNumTriangleLevels = 5;
 static const NSUInteger kNumRotationLevels = 3;
 
 @interface LevelSelectionViewController ()
