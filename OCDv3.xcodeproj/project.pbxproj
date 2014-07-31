@@ -72,6 +72,9 @@
 		3EDADD54195600BC008C8905 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDADD4B195600BC008C8905 /* GameViewController.m */; };
 		3EE049801985AB300087B43C /* TriangleLevel5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EE0497F1985AB300087B43C /* TriangleLevel5Scene.sks */; };
 		3EE049831985CBB80087B43C /* TriangleLevel5Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE049821985CBB80087B43C /* TriangleLevel5Scene.m */; };
+		3EE3B719198A30200019484E /* Tutorial-Letter-C@2x.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3EE3B716198A30200019484E /* Tutorial-Letter-C@2x.atlas */; };
+		3EE3B71A198A30200019484E /* Tutorial-Letter-D@2x.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3EE3B717198A30200019484E /* Tutorial-Letter-D@2x.atlas */; };
+		3EE3B71B198A30200019484E /* Tutorial-Letter-O@2x.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 3EE3B718198A30200019484E /* Tutorial-Letter-O@2x.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +190,9 @@
 		3EE0497F1985AB300087B43C /* TriangleLevel5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TriangleLevel5Scene.sks; sourceTree = "<group>"; };
 		3EE049811985CBB80087B43C /* TriangleLevel5Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleLevel5Scene.h; sourceTree = "<group>"; };
 		3EE049821985CBB80087B43C /* TriangleLevel5Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleLevel5Scene.m; sourceTree = "<group>"; };
+		3EE3B716198A30200019484E /* Tutorial-Letter-C@2x.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Tutorial-Letter-C@2x.atlas"; sourceTree = "<group>"; };
+		3EE3B717198A30200019484E /* Tutorial-Letter-D@2x.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Tutorial-Letter-D@2x.atlas"; sourceTree = "<group>"; };
+		3EE3B718198A30200019484E /* Tutorial-Letter-O@2x.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Tutorial-Letter-O@2x.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,8 +418,11 @@
 		3EDADD44195600BC008C8905 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				3E636AE2198A282F0095EAD7 /* Assets@2x.atlas */,
 				3EDADD45195600BC008C8905 /* Assets.atlas */,
+				3E636AE2198A282F0095EAD7 /* Assets@2x.atlas */,
+				3EE3B716198A30200019484E /* Tutorial-Letter-C@2x.atlas */,
+				3EE3B717198A30200019484E /* Tutorial-Letter-D@2x.atlas */,
+				3EE3B718198A30200019484E /* Tutorial-Letter-O@2x.atlas */,
 				3EDADD46195600BC008C8905 /* Images.xcassets */,
 			);
 			path = Assets;
@@ -550,6 +559,7 @@
 				3E6620F41968AFA60020BA4E /* Level8Scene.sks in Resources */,
 				3EE049801985AB300087B43C /* TriangleLevel5Scene.sks in Resources */,
 				3EDADD52195600BC008C8905 /* Images.xcassets in Resources */,
+				3EE3B71A198A30200019484E /* Tutorial-Letter-D@2x.atlas in Resources */,
 				3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */,
 				3E2954481984875F000CA889 /* TriangleLevel2Scene.sks in Resources */,
 				3E3E095719569F99006D87BE /* LevelSelectionViewController.xib in Resources */,
@@ -558,6 +568,7 @@
 				3E6620F21968AFA60020BA4E /* Level6Scene.sks in Resources */,
 				3EDADD51195600BC008C8905 /* Assets.atlas in Resources */,
 				3E440EE51953FC920074D667 /* Main.storyboard in Resources */,
+				3EE3B71B198A30200019484E /* Tutorial-Letter-O@2x.atlas in Resources */,
 				3E0B9624196952BA007688EB /* RotationLevel2Scene.sks in Resources */,
 				3E6620F31968AFA60020BA4E /* Level7Scene.sks in Resources */,
 				3E6620E81968AFA60020BA4E /* Level12Scene.sks in Resources */,
@@ -567,6 +578,7 @@
 				3E636AE3198A282F0095EAD7 /* Assets@2x.atlas in Resources */,
 				3E6620EE1968AFA60020BA4E /* Level2Scene.sks in Resources */,
 				3E6620F01968AFA60020BA4E /* Level4Scene.sks in Resources */,
+				3EE3B719198A30200019484E /* Tutorial-Letter-C@2x.atlas in Resources */,
 				3E8ED003197C931800092851 /* TutorialScene.sks in Resources */,
 				3E6620EB1968AFA60020BA4E /* Level15Scene.sks in Resources */,
 				3E6620EC1968AFA60020BA4E /* Level16Scene.sks in Resources */,
