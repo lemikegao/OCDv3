@@ -26,8 +26,12 @@
     CGFloat objectRotation = object.zRotation < 0 ? object.zRotation + 2*M_PI : object.zRotation;
     CGFloat targetRotation = possibleTarget.zRotation < 0 ? possibleTarget.zRotation + 2*M_PI : possibleTarget.zRotation;
     
+    // Round angles to 2 decimal places
+    objectRotation = floorf(objectRotation * 100) / 100;
+    targetRotation = floorf(targetRotation * 100) / 100;
+    
     // Make sure the triangles are set at the same angle
-    return ([super shouldLockObject:object withPossibleTarget:possibleTarget] && objectRotation == targetRotation);
+    return (objectRotation == targetRotation && [super shouldLockObject:object withPossibleTarget:possibleTarget]);
 }
 
 - (SKSpriteNode *)borderForSpriteNode:(SKSpriteNode *)node locked:(BOOL)locked
