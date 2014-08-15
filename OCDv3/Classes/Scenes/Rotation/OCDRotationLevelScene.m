@@ -58,7 +58,7 @@ static inline CGFloat angleBetweenLinesInRadians(CGPoint line1Start, CGPoint lin
     // WARNING: THIS CURRENTLY ONLY WORKS FOR SQUARES
     NSInteger objectAngle = object.zRotation < 0 ? roundf(radiansToDegrees(object.zRotation + 2*M_PI)) : roundf(radiansToDegrees(object.zRotation));
     BOOL isCorrectAngle = NO;
-    CGFloat targetAngle = radiansToDegrees(possibleTarget.zRotation);
+    NSInteger targetAngle = roundf(radiansToDegrees(possibleTarget.zRotation));
     while (targetAngle < 360)
     {
         if (targetAngle == objectAngle)
