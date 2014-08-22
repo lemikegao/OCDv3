@@ -7,7 +7,7 @@
 //
 
 #import "V2TutorialScene.h"
-#import "Level1Scene.h"
+#import "V2Level1Scene.h"
 
 @implementation V2TutorialScene
 
@@ -33,7 +33,7 @@
 
 - (SKScene *)nextLevelScene
 {
-    return [Level1Scene new];
+    return [V2Level1Scene new];
 }
 
 @end
