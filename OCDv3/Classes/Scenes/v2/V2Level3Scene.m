@@ -7,7 +7,18 @@
 //
 
 #import "V2Level3Scene.h"
+#import "V2Level4Scene.h"
 
 @implementation V2Level3Scene
+
+- (NSUInteger)numObjects
+{
+    return 3;
+}
+
+- (SKScene *)nextLevelScene
+{
+    return [V2Level4Scene new];
+}
 
 @end

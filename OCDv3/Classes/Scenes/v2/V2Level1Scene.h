@@ -7,7 +7,6 @@
 //
 
 #import "OCDSquareLevelScene.h"
-#import "Level2Scene.h"
 
 @interface V2Level1Scene : OCDSquareLevelScene
 
