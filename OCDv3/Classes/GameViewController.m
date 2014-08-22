@@ -10,6 +10,9 @@
 #import "LevelSelectionViewController.h"
 #import "SKScene+Unarchive.h"
 
+// V2
+#import "V2TutorialScene.h"
+
 // Tutorial
 #import "TutorialScene.h"
 
@@ -221,7 +224,7 @@
     {
         switch (level) {
             case 0:
-                scene = [TutorialScene new];
+                scene = [V2TutorialScene new];
                 break;
                 
             default:
