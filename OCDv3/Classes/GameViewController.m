@@ -70,7 +70,7 @@
     
     // Create and configure the scene.
     NSIndexPath *levelIndexPath = [NSIndexPath indexPathForRow:0 inSection:LevelSectionTypeTriangles];
-    [self _loadLevelAtIndexPath:levelIndexPath];
+    [self _loadLevelAtIndexPath:levelIndexPath toggleState:ToggleStateNew];
 }
 
 - (BOOL)shouldAutorotate
@@ -87,127 +87,141 @@
     }
 }
 
-- (void)_loadLevelAtIndexPath:(NSIndexPath*)levelIndexPath
+- (void)_loadLevelAtIndexPath:(NSIndexPath*)levelIndexPath toggleState:(ToggleState)state
 {
-    SKView * skView = (SKView *)self.view;
+    SKView *skView = (SKView *)self.view;
     SKScene *scene = nil;
-    NSUInteger level = levelIndexPath.row+1;
+    NSUInteger level = (state == ToggleStateOld) ? levelIndexPath.row+1 : levelIndexPath.row;
     
-    if (levelIndexPath.section == LevelSectionTypeTutorial)
+    if (state == ToggleStateOld)
     {
-        scene = [TutorialScene new];
-    }
-    else if (levelIndexPath.section == LevelSectionTypeSquares)
-    {
-        switch (level) {
-            case 1:
-                scene = [Level1Scene new];
-                break;
-                
-            case 2:
-                scene = [Level2Scene new];
-                break;
-                
-            case 3:
-                scene = [Level3Scene new];
-                break;
-                
-            case 4:
-                scene = [Level4Scene new];
-                break;
-                
-            case 5:
-                scene = [Level5Scene new];
-                break;
-                
-            case 6:
-                scene = [Level6Scene new];
-                break;
-                
-            case 7:
-                scene = [Level7Scene new];
-                break;
-                
-            case 8:
-                scene = [Level8Scene new];
-                break;
-                
-            case 9:
-                scene = [Level9Scene new];
-                break;
-                
-            case 10:
-                scene = [Level10Scene new];
-                break;
-                
-            case 11:
-                scene = [Level11Scene new];
-                break;
-                
-            case 12:
-                scene = [Level12Scene new];
-                break;
-                
-            case 13:
-                scene = [Level13Scene new];
-                break;
-                
-            case 14:
-                scene = [Level14Scene new];
-                break;
-                
-            case 15:
-                scene = [Level15Scene new];
-                break;
-                
-            case 16:
-                scene = [Level16Scene new];
-                break;
-                
-            default:
-                break;
+        if (levelIndexPath.section == LevelSectionTypeTutorial)
+        {
+            scene = [TutorialScene new];
+        }
+        else if (levelIndexPath.section == LevelSectionTypeSquares)
+        {
+            switch (level) {
+                case 1:
+                    scene = [Level1Scene new];
+                    break;
+                    
+                case 2:
+                    scene = [Level2Scene new];
+                    break;
+                    
+                case 3:
+                    scene = [Level3Scene new];
+                    break;
+                    
+                case 4:
+                    scene = [Level4Scene new];
+                    break;
+                    
+                case 5:
+                    scene = [Level5Scene new];
+                    break;
+                    
+                case 6:
+                    scene = [Level6Scene new];
+                    break;
+                    
+                case 7:
+                    scene = [Level7Scene new];
+                    break;
+                    
+                case 8:
+                    scene = [Level8Scene new];
+                    break;
+                    
+                case 9:
+                    scene = [Level9Scene new];
+                    break;
+                    
+                case 10:
+                    scene = [Level10Scene new];
+                    break;
+                    
+                case 11:
+                    scene = [Level11Scene new];
+                    break;
+                    
+                case 12:
+                    scene = [Level12Scene new];
+                    break;
+                    
+                case 13:
+                    scene = [Level13Scene new];
+                    break;
+                    
+                case 14:
+                    scene = [Level14Scene new];
+                    break;
+                    
+                case 15:
+                    scene = [Level15Scene new];
+                    break;
+                    
+                case 16:
+                    scene = [Level16Scene new];
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        else if (levelIndexPath.section == LevelSectionTypeTriangles)
+        {
+            switch (level) {
+                case 1:
+                    scene = [TriangleLevel1Scene new];
+                    break;
+                    
+                case 2:
+                    scene = [TriangleLevel2Scene new];
+                    break;
+                    
+                case 3:
+                    scene = [TriangleLevel3Scene new];
+                    break;
+                    
+                case 4:
+                    scene = [TriangleLevel4Scene new];
+                    break;
+                    
+                case 5:
+                    scene = [TriangleLevel5Scene new];
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+        else if (levelIndexPath.section == LevelSectionTypeRotation)
+        {
+            switch (level) {
+                case 1:
+                    scene = [RotationLevel1Scene new];
+                    break;
+                    
+                case 2:
+                    scene = [RotationLevel2Scene new];
+                    break;
+                    
+                case 3:
+                    scene = [RotationLevel3Scene new];
+                    break;
+                    
+                default:
+                    break;
+            }
         }
     }
-    else if (levelIndexPath.section == LevelSectionTypeTriangles)
+    else
     {
         switch (level) {
-            case 1:
-                scene = [TriangleLevel1Scene new];
-                break;
-                
-            case 2:
-                scene = [TriangleLevel2Scene new];
-                break;
-                
-            case 3:
-                scene = [TriangleLevel3Scene new];
-                break;
-                
-            case 4:
-                scene = [TriangleLevel4Scene new];
-                break;
-                
-            case 5:
-                scene = [TriangleLevel5Scene new];
-                break;
-                
-            default:
-                break;
-        }
-    }
-    else if (levelIndexPath.section == LevelSectionTypeRotation)
-    {
-        switch (level) {
-            case 1:
-                scene = [RotationLevel1Scene new];
-                break;
-                
-            case 2:
-                scene = [RotationLevel2Scene new];
-                break;
-                
-            case 3:
-                scene = [RotationLevel3Scene new];
+            case 0:
+                scene = [TutorialScene new];
                 break;
                 
             default:
@@ -247,9 +261,9 @@
 }
 
 #pragma mark - LevelSectionViewControllerDelegate methods
-- (void)didSelectLevelAtIndexPath:(NSIndexPath *)levelIndexPath;
+- (void)didSelectLevelAtIndexPath:(NSIndexPath *)indexPath toggleState:(ToggleState)state
 {
-    [self _loadLevelAtIndexPath:levelIndexPath];
+    [self _loadLevelAtIndexPath:indexPath toggleState:state];
 }
 
 @end

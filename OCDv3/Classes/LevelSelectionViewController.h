@@ -17,9 +17,15 @@ typedef NS_ENUM(NSUInteger, LevelSectionType)
     LevelSectionTypeNumSections
 };
 
+typedef NS_ENUM(NSInteger, ToggleState)
+{
+    ToggleStateNew = 0,
+    ToggleStateOld,
+};
+
 @protocol LevelSelectionViewControllerDelegate <NSObject>
 
-- (void)didSelectLevelAtIndexPath:(NSIndexPath *)indexPath;
+- (void)didSelectLevelAtIndexPath:(NSIndexPath *)indexPath toggleState:(ToggleState)state;
 
 @end
 
