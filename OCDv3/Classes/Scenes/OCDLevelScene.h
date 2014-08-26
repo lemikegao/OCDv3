@@ -15,7 +15,6 @@ extern CGFloat const OCDLevelScenceMaxLockDistance;
 @interface OCDLevelScene : SKScene
 
 // Properties to override by subclass
-@property (nonatomic) NSUInteger numObjects;
 @property (nonatomic, weak, readonly) SKSpriteNode *selectedNode;
 @property (nonatomic, strong, readonly) UITouch *currentTouch;
 

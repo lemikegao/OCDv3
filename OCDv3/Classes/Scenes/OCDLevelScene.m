@@ -17,6 +17,8 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
 @property (nonatomic) BOOL gameOver;
 @property (nonatomic) NSInteger numObjectsLocked;
 @property (nonatomic, strong) UITouch *currentTouch;
+@property (nonatomic, strong) NSArray *listOfObjectNames;
+@property (nonatomic) NSInteger numObjects;
 
 @end
 
@@ -33,21 +35,25 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
         _gameOver = NO;
         _numObjectsLocked = 0;
         _currentTouch = nil;
+        _listOfObjectNames = @[@"square", @"triangle"];
     }
     
     return self;
-}
-
-- (NSUInteger)numObjects
-{
-    NSAssert(NO, @"This getter needs to be overridden: numObjects");
-    return _numObjects;
 }
 
 -(void)didMoveToView:(SKView *)view
 {
     CGRect frame = self.frame;
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(frame.origin.x - 75, frame.origin.y - 75, frame.size.width + 150, frame.size.height + 150)];
+    
+    // Count up number of objects from .sks file
+    self.numObjects = 0;
+    for (NSString *objectName in self.listOfObjectNames)
+    {
+        [self enumerateChildNodesWithName:objectName usingBlock:^(SKNode *node, BOOL *stop) {
+            self.numObjects++;
+        }];
+    }
 }
 
 #pragma mark - Methods to override by subclass

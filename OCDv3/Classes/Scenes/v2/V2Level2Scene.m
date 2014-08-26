@@ -11,11 +11,6 @@
 
 @implementation V2Level2Scene
 
-- (NSUInteger)numObjects
-{
-    return 2;
-}
-
 - (SKScene *)nextLevelScene
 {
     return [V2Level3Scene new];
