@@ -17,6 +17,16 @@
 #import "V2Level3Scene.h"
 #import "V2Level4Scene.h"
 #import "V2Level5Scene.h"
+#import "V2Level6Scene.h"
+#import "V2Level7Scene.h"
+#import "V2Level8Scene.h"
+#import "V2Level9Scene.h"
+#import "V2Level10Scene.h"
+#import "V2Level11Scene.h"
+#import "V2Level12Scene.h"
+#import "V2Level13Scene.h"
+#import "V2Level14Scene.h"
+#import "V2Level15Scene.h"
 
 // Tutorial
 #import "TutorialScene.h"
@@ -251,8 +261,47 @@
             case 5:
                 scene = [V2Level5Scene new];
                 break;
-
                 
+            case 6:
+                scene = [V2Level6Scene new];
+                break;
+                
+            case 7:
+                scene = [V2Level7Scene new];
+                break;
+                
+            case 8:
+                scene = [V2Level8Scene new];
+                break;
+                
+            case 9:
+                scene = [V2Level9Scene new];
+                break;
+                
+            case 10:
+                scene = [V2Level10Scene new];
+                break;
+                
+            case 11:
+                scene = [V2Level11Scene new];
+                break;
+                
+            case 12:
+                scene = [V2Level12Scene new];
+                break;
+                
+            case 13:
+                scene = [V2Level13Scene new];
+                break;
+                
+            case 14:
+                scene = [V2Level14Scene new];
+                break;
+                
+            case 15:
+                scene = [V2Level15Scene new];
+                break;
+
             default:
                 break;
         }
