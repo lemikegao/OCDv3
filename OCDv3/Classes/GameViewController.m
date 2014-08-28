@@ -27,6 +27,8 @@
 #import "V2Level13Scene.h"
 #import "V2Level14Scene.h"
 #import "V2Level15Scene.h"
+#import "V2Level16Scene.h"
+#import "V2Level17Scene.h"
 
 // Tutorial
 #import "TutorialScene.h"
@@ -300,6 +302,14 @@
                 
             case 15:
                 scene = [V2Level15Scene new];
+                break;
+                
+            case 16:
+                scene = [V2Level16Scene new];
+                break;
+                
+            case 17:
+                scene = [V2Level17Scene new];
                 break;
 
             default:
