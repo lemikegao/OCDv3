@@ -9,7 +9,27 @@
 #import "V2TutorialScene.h"
 #import "V2Level1Scene.h"
 
+@interface V2TutorialScene()
+
+@property (nonatomic, strong) SKTextureAtlas *atlas;
+
+@end
+
 @implementation V2TutorialScene
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        _atlas = [SKTextureAtlas atlasNamed:@"Assets"];
+        [SKTextureAtlas preloadTextureAtlases:@[_atlas] withCompletionHandler:^{
+
+        }];
+    }
+    
+    return self;
+}
 
 - (NSUInteger)numObjects
 {
@@ -24,7 +44,7 @@
 - (SKSpriteNode *)borderForSpriteNode:(SKSpriteNode *)node locked:(BOOL)locked
 {
     NSString *suffix = locked ? @"-border-locked" : @"-border";
-    SKSpriteNode *border = [SKSpriteNode spriteNodeWithImageNamed:[node.name stringByAppendingString:suffix]];
+    SKSpriteNode *border = [SKSpriteNode spriteNodeWithTexture:[self.atlas textureNamed:[node.name stringByAppendingString:suffix]]];
     border.color = node.color;
     border.colorBlendFactor = 1;
     
