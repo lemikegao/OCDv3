@@ -11,7 +11,7 @@
 static const NSUInteger kNumSquareLevels = 16;
 static const NSUInteger kNumTriangleLevels = 5;
 static const NSUInteger kNumRotationLevels = 3;
-static const NSInteger kNumv2Levels = 18;
+static const NSInteger kNumv2Levels = 21;
 
 @interface LevelSelectionViewController ()
 

@@ -92,6 +92,8 @@
 		3EB0CBFE19A73A070034D152 /* V2Level3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0CBFC19A73A070034D152 /* V2Level3Scene.sks */; };
 		3EB0CC0019A73ADC0034D152 /* V2Level4Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0CBFF19A73ADC0034D152 /* V2Level4Scene.sks */; };
 		3EB0CC0219A73B390034D152 /* V2Level5Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EB0CC0119A73B390034D152 /* V2Level5Scene.sks */; };
+		3EBA30CB19B0592300521359 /* V2Level19Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EBA30CA19B0592300521359 /* V2Level19Scene.sks */; };
+		3EBA30CD19B05A6500521359 /* V2Level20Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3EBA30CC19B05A6500521359 /* V2Level20Scene.sks */; };
 		3ECC3FB2197C70EF006D2AC4 /* TriangleLevel1Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */; };
 		3ECC3FB5197C78B5006D2AC4 /* TriangleLevel1Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */; };
 		3ED7BFC71984ABA50045CAAE /* TriangleLevel3Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED7BFC61984ABA50045CAAE /* TriangleLevel3Scene.m */; };
@@ -261,6 +263,8 @@
 		3EB0CBFC19A73A070034D152 /* V2Level3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = V2Level3Scene.sks; sourceTree = "<group>"; };
 		3EB0CBFF19A73ADC0034D152 /* V2Level4Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = V2Level4Scene.sks; sourceTree = "<group>"; };
 		3EB0CC0119A73B390034D152 /* V2Level5Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = V2Level5Scene.sks; sourceTree = "<group>"; };
+		3EBA30CA19B0592300521359 /* V2Level19Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = V2Level19Scene.sks; sourceTree = "<group>"; };
+		3EBA30CC19B05A6500521359 /* V2Level20Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = V2Level20Scene.sks; sourceTree = "<group>"; };
 		3ECC3FB0197C70EF006D2AC4 /* TriangleLevel1Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleLevel1Scene.h; sourceTree = "<group>"; };
 		3ECC3FB1197C70EF006D2AC4 /* TriangleLevel1Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleLevel1Scene.m; sourceTree = "<group>"; };
 		3ECC3FB4197C78B5006D2AC4 /* TriangleLevel1Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TriangleLevel1Scene.sks; sourceTree = "<group>"; };
@@ -548,6 +552,8 @@
 				3E24E1F119AF1D1000070DD5 /* V2Level16Scene.sks */,
 				3E24E1F319AF1EB900070DD5 /* V2Level17Scene.sks */,
 				3E24E1F519AF1F6600070DD5 /* V2Level18Scene.sks */,
+				3EBA30CA19B0592300521359 /* V2Level19Scene.sks */,
+				3EBA30CC19B05A6500521359 /* V2Level20Scene.sks */,
 			);
 			path = v2;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 				3E6620E61968AFA60020BA4E /* Level10Scene.sks in Resources */,
 				3E6620E71968AFA60020BA4E /* Level11Scene.sks in Resources */,
 				3EF731E219ADC2E5003A571F /* V2Level15Scene.sks in Resources */,
+				3EBA30CD19B05A6500521359 /* V2Level20Scene.sks in Resources */,
 				3EB0CC0219A73B390034D152 /* V2Level5Scene.sks in Resources */,
 				3EB0CBE919A736D40034D152 /* V2TutorialScene.sks in Resources */,
 				3ED7BFC91984AC070045CAAE /* TriangleLevel3Scene.sks in Resources */,
@@ -764,6 +771,7 @@
 				3E6620EC1968AFA60020BA4E /* Level16Scene.sks in Resources */,
 				3EF191A919AC726500463BF0 /* V2Level8Scene.sks in Resources */,
 				3E6620F11968AFA60020BA4E /* Level5Scene.sks in Resources */,
+				3EBA30CB19B0592300521359 /* V2Level19Scene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
