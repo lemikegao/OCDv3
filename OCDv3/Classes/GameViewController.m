@@ -37,6 +37,11 @@
 #import "V2Level23Scene.h"
 #import "V2Level24Scene.h"
 #import "V2Level25Scene.h"
+#import "V2Level26Scene.h"
+#import "V2Level27Scene.h"
+#import "V2Level28Scene.h"
+#import "V2Level29Scene.h"
+#import "V2Level30Scene.h"
 
 // Tutorial
 #import "TutorialScene.h"
@@ -350,6 +355,26 @@
                 
             case 25:
                 scene = [V2Level25Scene new];
+                break;
+                
+            case 26:
+                scene = [V2Level26Scene new];
+                break;
+                
+            case 27:
+                scene = [V2Level27Scene new];
+                break;
+                
+            case 28:
+                scene = [V2Level28Scene new];
+                break;
+                
+            case 29:
+                scene = [V2Level29Scene new];
+                break;
+                
+            case 30:
+                scene = [V2Level30Scene new];
                 break;
 
             default:
