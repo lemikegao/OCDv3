@@ -7,18 +7,17 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-            
-
-@end
+#import "Flurry.h"
 
 @implementation AppDelegate
-            
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    application.applicationSupportsShakeToEdit = YES;
+    application.applicationSupportsShakeToEdit = YES;       // Level selector
+    
+    // Flurry
+    [Flurry setCrashReportingEnabled:YES];
+    [Flurry startSession:@"6MN7TQ8MQ5MBX2KZ4RFR"];
+    
     return YES;
 }
 

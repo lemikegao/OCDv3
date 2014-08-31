@@ -32,6 +32,8 @@
 		3E47F14919ADBDF70011B681 /* V2Level14Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47F14819ADBDF70011B681 /* V2Level14Scene.m */; };
 		3E47F14C19ADBE000011B681 /* V2Level15Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E47F14B19ADBE000011B681 /* V2Level15Scene.m */; };
 		3E47F14E19ADBEC40011B681 /* V2Level11Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3E47F14D19ADBEC40011B681 /* V2Level11Scene.sks */; };
+		3E48FB2D19B2DFCF00F3547F /* libFlurry_5.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E48FB2C19B2DFCF00F3547F /* libFlurry_5.3.0.a */; };
+		3E48FB2F19B2DFD900F3547F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E48FB2E19B2DFD900F3547F /* SystemConfiguration.framework */; };
 		3E6620C41968AF890020BA4E /* Level10Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620A51968AF890020BA4E /* Level10Scene.m */; };
 		3E6620C51968AF890020BA4E /* Level11Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620A71968AF890020BA4E /* Level11Scene.m */; };
 		3E6620C61968AF890020BA4E /* Level12Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6620A91968AF890020BA4E /* Level12Scene.m */; };
@@ -169,6 +171,9 @@
 		3E47F14A19ADBE000011B681 /* V2Level15Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2Level15Scene.h; sourceTree = "<group>"; };
 		3E47F14B19ADBE000011B681 /* V2Level15Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2Level15Scene.m; sourceTree = "<group>"; };
 		3E47F14D19ADBEC40011B681 /* V2Level11Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = V2Level11Scene.sks; sourceTree = "<group>"; };
+		3E48FB2B19B2DFCF00F3547F /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		3E48FB2C19B2DFCF00F3547F /* libFlurry_5.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_5.3.0.a; sourceTree = "<group>"; };
+		3E48FB2E19B2DFD900F3547F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3E6620A41968AF890020BA4E /* Level10Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level10Scene.h; sourceTree = "<group>"; };
 		3E6620A51968AF890020BA4E /* Level10Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level10Scene.m; sourceTree = "<group>"; };
 		3E6620A61968AF890020BA4E /* Level11Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level11Scene.h; sourceTree = "<group>"; };
@@ -297,6 +302,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E48FB2F19B2DFD900F3547F /* SystemConfiguration.framework in Frameworks */,
+				3E48FB2D19B2DFCF00F3547F /* libFlurry_5.3.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +342,7 @@
 				3EDADD47195600BC008C8905 /* Classes */,
 				3EDADD4F195600BC008C8905 /* Scene Layouts */,
 				3EDADD44195600BC008C8905 /* Assets */,
+				3E48FB2919B2DFCF00F3547F /* Frameworks */,
 				3E440ED41953FC920074D667 /* Supporting Files */,
 			);
 			path = OCDv3;
@@ -364,6 +372,24 @@
 				3E440EF11953FC920074D667 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E48FB2919B2DFCF00F3547F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E48FB2A19B2DFCF00F3547F /* Flurry */,
+				3E48FB2E19B2DFD900F3547F /* SystemConfiguration.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		3E48FB2A19B2DFCF00F3547F /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				3E48FB2B19B2DFCF00F3547F /* Flurry.h */,
+				3E48FB2C19B2DFCF00F3547F /* libFlurry_5.3.0.a */,
+			);
+			path = Flurry;
 			sourceTree = "<group>";
 		};
 		3E6620A21968AF600020BA4E /* Rotation */ = {
@@ -981,6 +1007,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OCDv3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCDv3/Libraries/Flurry",
+					"$(PROJECT_DIR)/OCDv3/Frameworks/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -995,6 +1026,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OCDv3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCDv3/Libraries/Flurry",
+					"$(PROJECT_DIR)/OCDv3/Frameworks/Flurry",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

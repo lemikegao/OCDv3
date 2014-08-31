@@ -7,6 +7,7 @@
 //
 
 #import "OCDLevelScene.h"
+#import "Flurry.h"
 
 NSString *const OCDLevelSceneBorderName = @"OCDLevelSceneBorderName";
 CGFloat const OCDLevelSceneMaxLockDistance = 20;
@@ -54,6 +55,9 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
             self.numObjects++;
         }];
     }
+    
+    // Start timing level completion duration
+    [Flurry logEvent:[NSString stringWithFormat:@"Played_%@", NSStringFromClass(self.class)] timed:YES];
 }
 
 #pragma mark - Methods to override by subclass
@@ -266,6 +270,9 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
 #pragma mark - Helper methods
 - (void)_segueToNextScene
 {
+    // End timing of level completion duration
+    [Flurry endTimedEvent:[NSString stringWithFormat:@"Played_%@", NSStringFromClass(self.class)] withParameters:nil];
+    
     SKScene *tempScene = [self nextLevelScene];
     SKScene *scene = [tempScene unarchiveFromFile:NSStringFromClass([tempScene class])];
     scene.scaleMode = SKSceneScaleModeAspectFill;
