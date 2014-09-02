@@ -36,7 +36,7 @@ CGFloat const OCDLevelSceneMaxLockDistance = 20;
         _gameOver = NO;
         _numObjectsLocked = 0;
         _currentTouch = nil;
-        _listOfObjectNames = @[@"square", @"triangle"];
+        _listOfObjectNames = @[@"square", @"triangle", @"circle"];
     }
     
     return self;

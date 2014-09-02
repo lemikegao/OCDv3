@@ -47,6 +47,11 @@
 #import "V2Level33Scene.h"
 #import "V2Level34Scene.h"
 #import "V2Level35Scene.h"
+#import "V2Level36Scene.h"
+#import "V2Level37Scene.h"
+#import "V2Level38Scene.h"
+#import "V2Level39Scene.h"
+#import "V2Level40Scene.h"
 
 // Tutorial
 #import "TutorialScene.h"
@@ -400,6 +405,26 @@
                 
             case 35:
                 scene = [V2Level35Scene new];
+                break;
+                
+            case 36:
+                scene = [V2Level36Scene new];
+                break;
+                
+            case 37:
+                scene = [V2Level37Scene new];
+                break;
+                
+            case 38:
+                scene = [V2Level38Scene new];
+                break;
+                
+            case 39:
+                scene = [V2Level39Scene new];
+                break;
+                
+            case 40:
+                scene = [V2Level40Scene new];
                 break;
 
             default:
