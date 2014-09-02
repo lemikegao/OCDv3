@@ -1215,7 +1215,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OCDv3/Libraries/Flurry",
 					"$(PROJECT_DIR)/OCDv3/Frameworks/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1234,7 +1233,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/OCDv3/Libraries/Flurry",
 					"$(PROJECT_DIR)/OCDv3/Frameworks/Flurry",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
